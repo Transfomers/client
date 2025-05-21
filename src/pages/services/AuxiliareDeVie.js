@@ -7,21 +7,23 @@ const AuxiliaireDeVie = () => {
   return (
     <div>
       <AuxiliareMedicalInfo />
-      <div className=" ">
-        <h1 className="font-bold text-green-600 text-center py-4 m-2 text-2xl">
+      <div className="text-center my-8">
+        <h1 className="font-bold text-green-600 text-2xl py-4">
           Fonction et Activités de l’Auxiliaire de Vie
         </h1>
-        <p className="text-gray-500 text-center m-4">
-          Notre formation propose un programme complet alliant cours théoriques,
-          séances pratiques et stages en entreprise,
-          <br />
-          accompagnés par des professionnels du domaine. Intégrez rapidement le
-          secteur de la santé et <br />
-          contribuez activement à l'efficacité des soins à domicile.
+        <p className="text-gray-700 px-4 text-justify md:text-center max-w-3xl mx-auto">
+          La formation d’Auxiliaire de Vie vous prépare à accompagner au
+          quotidien les personnes âgées, malades ou en situation de handicap.
+          Vous apprendrez à intervenir avec bienveillance, à assurer leur
+          confort, leur hygiène, et à favoriser leur autonomie à domicile. Grâce
+          à un programme complet alliant théorie, pratique et stages encadrés,
+          vous serez opérationnel(le) pour intégrer rapidement ce secteur
+          essentiel.
         </p>
       </div>
+
       <AuxiliareMedicaleDetails />
-    
+
       <AuxiliaireDeVieHero />
       <ContactSection />
     </div>

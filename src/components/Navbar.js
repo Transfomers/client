@@ -118,6 +118,26 @@ const Navbar = () => {
           className="h-24 w-auto hover:opacity-80 transition-opacity"
         />
       </Link>
+      {/* <div className="h-24 w-auto hover:opacity-80 transition-opacity">
+        <br/>
+        </div>
+      <div
+        className={`fixed z-[60] top-4 left-12 transition-all duration-300 rounded-xl ${
+          isScrolled || !isHomePage
+            ? "bg-black/-40 backdrop-blur-md "
+            : "bg-transparent"
+        }`}
+      >
+        <Link to="/">
+          <img
+            src={Logo}
+            alt="ITC Santé"
+            className={`transition-all duration-300 ${
+              isScrolled || !isHomePage ? "h-28" : "h-28"
+            } w-auto hover:opacity-0`}
+          />
+        </Link>
+      </div> */}
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-8 items-center">

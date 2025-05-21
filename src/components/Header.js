@@ -26,6 +26,11 @@ const Header = () => {
     link.click();
     document.body.removeChild(link);
   };
+   const handleMobileDownload = (e) => {
+    e.preventDefault();
+    window.open(flyerImage, '_blank');
+  };
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,39 +41,48 @@ const Header = () => {
   }, [images.length]);
 
   return (
-   <div className="relative " >
-     <header
-   
-      className="relative h-screen bg-cover bg-center transition-all duration-1000"
-      style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
-    >
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+    <div className="relative">
+      <header
+        className="relative h-screen bg-cover bg-center transition-all duration-1000"
+        style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+      >
+        {/* Background overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Content container */}
-      <div className="relative h-full flex justify-end items-center">
-        <div className="bg-black/50 pt-2 m-4 mr-8 max-w-md rounded-lg">
-          <h1 className="text-4xl text-center  font-bold text-white mb-4">{slogan}</h1>
-          <p className="text-lg text-white/80 text-center mx-6">{shortDescription}</p>
+        {/* Content container */}
+        <div className="relative h-full flex justify-end items-center">
+          <div className="bg-black/50 pt-2 m-4 mr-8 max-w-md rounded-lg">
+            <h1 className="text-4xl text-center font-bold text-white mb-4">{slogan}</h1>
+            <p className="text-lg text-white/80 text-center mx-6">{shortDescription}</p>
 
-          <div className="flex flex-col space-y-4">
-            <button
-              onClick={handleDownloadFlyer}
-              className="p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold flex items-center justify-center gap-2 transition-all"
-            >
-              <FontAwesomeIcon icon={faDownload} /> Télécharger le Flyer
-            </button>
-            <Link
-              to="/contact"
-              className="p-4 rounded-lg bg-green-700 hover:bg-green-600 text-yellow-300 font-semibold text-center transition-all"
-            >
-              Contactez-Nous
-            </Link>
+            <div className="flex flex-col space-y-4">
+              {/* Desktop download button - hidden on mobile */}
+              <button
+                onClick={handleDownloadFlyer}
+                className="hidden md:flex p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold items-center justify-center gap-2 transition-all"
+              >
+                <FontAwesomeIcon icon={faDownload} /> Télécharger le Flyer
+              </button>
+
+              {/* Mobile download button - visible only on mobile */}
+              <button
+                onClick={handleMobileDownload}
+                className="md:hidden p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold flex items-center justify-center gap-2 transition-all"
+              >
+                <FontAwesomeIcon icon={faDownload} /> Télécharger le Flyer
+              </button>
+
+              <Link
+                to="/contact"
+                className="p-4 rounded-lg bg-green-700 hover:bg-green-600 text-yellow-300 font-semibold text-center transition-all"
+              >
+                Contactez-Nous
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-   </div>
+      </header>
+    </div>
   );
 };
 

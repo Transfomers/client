@@ -1,57 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import CreateArticle from './CreateArticle';
-import ArticleList from './ArticleList';
-import Login from './Login';
-import axios from 'axios';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import AdminLayout from '../components/AdminLayout';
 
 const Admin = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [articles, setArticles] = useState([]);
-
-  const fetchArticles = async () => {
-    try {
-      const res = await axios.get('/api/articles');
-      setArticles(res.data);
-    } catch (err) {
-      console.error('Error fetching articles:', err);
-    }
-  };
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      fetchArticles();
-    }
-  }, [isAuthenticated]);
-
-  const handleArticleCreated = () => {
-    fetchArticles(); // refresh article list
-  };
-
-  const handleDelete = async (id) => {
-    await axios.delete(`/api/articles/${id}`);
-    fetchArticles();
-  };
+  const { user, isAuthenticated } = useSelector(state => state.auth);
 
   if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="max-w-md w-full space-y-8 p-10 bg-white rounded shadow">
-          <Login onLogin={() => setIsAuthenticated(true)} />
-        </div>
-      </div>
-    );
+    return <Navigate to="/login" />;
+  }
+
+  if (user.role !== 'admin' && user.role !== 'superadmin') {
+    return <Navigate to="/" />;
   }
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <main className="flex-1 p-6 bg-gray-50 space-y-8">
-        <h1 className="text-2xl font-bold text-green-800">Dashboard</h1>
-        <CreateArticle onCreated={handleArticleCreated} />
-        <ArticleList articles={articles} onDelete={handleDelete} />
-      </main>
-      
+    <div>
+      <AdminLayout />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+        <p>Welcome to the admin dashboard!</p>
+        {user.role === 'superadmin' && (
+          <div className="mt-4">
+            <h2 className="text-xl font-semibold mb-4">Super Admin Features</h2>
+            {/* Add super admin specific features here */}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

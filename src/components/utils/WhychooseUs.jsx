@@ -1,9 +1,14 @@
 import React from "react";
 // import { BsGraphUp } from "react-icons/bs";
-import { FaUserCheck, FaChalkboardTeacher, FaBriefcase, FaUsers } from "react-icons/fa";
+import {
+  FaUserCheck,
+  FaChalkboardTeacher,
+  FaBriefcase,
+  FaUsers,
+} from "react-icons/fa";
 import whyImg1 from "../../assets/images/auxilire3.jpg";
-import whyImg2 from "../../assets/images/whyImg2.jpg"; 
-import whyImg3 from "../../assets/images/whyImg3.jpg"; 
+import whyImg2 from "../../assets/images/whyImg2.jpg";
+import whyImg3 from "../../assets/images/whyImg3.jpg";
 import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {
@@ -35,7 +40,7 @@ const WhyChooseUs = () => {
                 {[
                   { label: "Savoir Pratique", percentage: 92 },
                   { label: "Taux de Réussite", percentage: 80 },
-                  { label: "Étudiants Satisfaits", percentage: 88  },
+                  { label: "Étudiants Satisfaits", percentage: 88 },
                 ].map((stat, index) => (
                   <div key={index}>
                     <div className="flex justify-between mb-2">
@@ -111,75 +116,35 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Features Grid */}
-        {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-8 mt-20">
           {/* 1. Expertise pédagogique */}
-          <div className="bg-white p-8 rounded-xl shadow-lg flex items-start">
-            <FaChalkboardTeacher className="text-green-800 text-4xl mr-6 flex-shrink-0" />
-            <div>
-              <h3 className="text-2xl font-semibold mb-4 text-green-800">
-                Expertise pédagogique
-              </h3>
-              <ul className="text-gray-600 mb-4 list-disc ml-5 space-y-1">
-                <li>Enseignants professionnels actifs sur le terrain</li>
-                <li>Utilisation des dernières technologies du secteur santé</li>
-                <li>Approche par compétence (APC)</li>
-                <li>Cours 75% pratique & 25% théorie</li>
-                <li>Alternance entre cours et immersion professionnelle</li>
-              </ul>
+          <div className="bg-white p-8 rounded-xl shadow-lg flex flex-col h-full">
+            <div className="flex items-start mb-4">
+              <FaChalkboardTeacher className="text-green-800 text-4xl mr-6 flex-shrink-0" />
               <div>
-                <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-2 rounded">
-                  Apprenez auprès de professionnels d'aujourd'hui pour
-                  construire la santé de demain.
-                </span>
+                <h3 className="text-2xl font-semibold mb-4 text-green-800">
+                  Expertise pédagogique
+                </h3>
+                <ul className="text-gray-600 list-disc ml-5 space-y-1">
+                  <li>Enseignants professionnels actifs sur le terrain</li>
+                  <li>
+                    Utilisation des dernières technologies du secteur santé
+                  </li>
+                  <li>Approche par compétence (APC)</li>
+                  <li>Cours 75% pratique & 25% théorie</li>
+                  <li>Alternance entre cours et immersion professionnelle</li>
+                </ul>
               </div>
+            </div>
+            <div className="mt-auto">
+              <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-2 rounded">
+                Apprenez auprès de professionnels d'aujourd'hui pour construire
+                la santé de demain.
+              </span>
             </div>
           </div>
 
           {/* 2. Accompagnement personnalisé */}
-          <div className="bg-white p-8 rounded-xl shadow-lg flex items-start">
-            <FaUserCheck className="text-green-800 text-4xl mr-6 flex-shrink-0" />
-            <div>
-              <h3 className="text-2xl font-semibold mb-4 text-green-800">
-                Accompagnement personnalisé
-              </h3>
-              <ul className="text-gray-600 mb-6 list-disc ml-5 space-y-1">
-                <li>
-                  Suivi individualisé pendant toute la durée de la formation
-                </li>
-                <li>Suivi post-formation, accompagnement à l'insertion</li>
-                <li>Accompagnement dans le montage et le suivi de projets</li>
-              </ul>
-              <div>
-                <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-2 rounded">
-                  Votre réussite est notre mission, pendant et après votre
-                  parcours.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* 3. Insertion professionnelle */}
-          <div className="bg-white p-8 rounded-xl shadow-lg flex items-start">
-            <FaBriefcase className="text-green-800 text-4xl mr-6 flex-shrink-0" />
-            <div>
-              <h3 className="text-2xl font-semibold mb-4 text-green-800">
-                Insertion professionnelle
-              </h3>
-              <ul className="text-gray-600 mb-4 list-disc ml-5 space-y-1">
-                <li>Former directement pour intégrer le monde du travail</li>
-                <li>Stage académique offert</li>
-                <li>Accompagnement à un emploi décent</li>
-              </ul>
-              <div>
-                <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-2 rounded">
-                  Une formation pensée pour vous propulser vers l'emploi.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* 4. Vie étudiante & Activités gratuites */}
           <div className="bg-white p-8 rounded-xl shadow-lg flex items-start">
             <FaUsers className="text-green-800 text-4xl mr-6 flex-shrink-0" />
             <div>
@@ -201,6 +166,49 @@ const WhyChooseUs = () => {
                 <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-2 rounded">
                   Grandissez, échangez et innovez au rythme d'une vie étudiante
                   dynamique.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Insertion professionnelle */}
+          <div className="bg-white p-8 rounded-xl shadow-lg flex items-start">
+            <FaUserCheck className="text-green-800 text-4xl mr-6 flex-shrink-0" />
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 text-green-800">
+                Accompagnement personnalisé
+              </h3>
+              <ul className="text-gray-600 mb-4 list-disc ml-5 space-y-1">
+                <li>
+                  Suivi individualisé pendant toute la durée de la formation
+                </li>
+                <li>Suivi post-formation, accompagnement à l'insertion</li>
+                <li>Accompagnement dans le montage et le suivi de projets</li>
+              </ul>
+              <div>
+                <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-2 rounded">
+                  Votre réussite est notre mission, pendant et après votre
+                  parcours.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Vie étudiante & Activités gratuites */}
+          <div className="bg-white p-8 rounded-xl shadow-lg flex items-start">
+            <FaBriefcase className="text-green-800 text-4xl mr-6 flex-shrink-0" />
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 text-green-800">
+                Insertion professionnelle
+              </h3>
+              <ul className="text-gray-600 mb-4 list-disc ml-5 space-y-1">
+                <li>Former directement pour intégrer le monde du travail</li>
+                <li>Stage académique offert</li>
+                <li>Accompagnement à un emploi décent</li>
+              </ul>
+              <div>
+                <span className="inline-block bg-yellow-400 text-green-800 font-semibold px-4 py-4 rounded">
+                  Une formation pensée pour vous propulser vers l'emploi.
                 </span>
               </div>
             </div>
