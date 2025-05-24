@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import DefaultImage1 from "../../assets/images/DefaultImage1.jpg";
 import DefaultImage2 from "../../assets/images/DefaultImage2.jpeg";
 import DefaultImage3 from "../../assets/images/DefaultImage3.jpg";
-import DefaultImage4 from "../../assets/images/DefaultImage4.jpg";
+import DefaultImage4 from "../../assets/images/homeassistant.jpg";
 import DefaultImage5 from "../../assets/images/DefaultImage5.jpg";
 import DefaultImage6 from "../../assets/images/DefaultImage6.jpg";
 

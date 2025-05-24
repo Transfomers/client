@@ -100,7 +100,7 @@ const Navbar = () => {
       url: "https://www.tiktok.com/@itcsant3?_t=ZS-8vbgt98kamd&_r=1",
     },
     { icon: FaWhatsapp, url: "https://wa.me/237651245653" },
-    { icon: FaYoutube, url: "https://www.youtube.com/@itcsante" },
+    { icon: FaYoutube, url: "https://youtube.com/@laminutesante-h5t?si=iGkT-Dv0wnkuIu2a" },
   ];
 
   return (
@@ -236,7 +236,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-50 p-6 flex flex-col">
+        <div className="md:hidden fixed inset-0 bg-green-800 z-50 p-6 flex flex-col">
           <Link
             to="/"
             className="text-lg font-bold text-green-800 mb-4"

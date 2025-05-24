@@ -32,7 +32,7 @@ const socialLinks = [
   },
   {
     icon: FaYoutube,
-    url: "https://www.youtube.com/@itcsante",
+    url: "https://youtube.com/@laminutesante-h5t?si=iGkT-Dv0wnkuIu2a",
     label: "YouTube"
   }
 ];
@@ -97,22 +97,22 @@ function ContactSection() {
           <h3 className="text-[22px] font-semibold text-green-800 pb-2">Appelez-nous</h3>
           <p className="text-green-800">Notre équipe vous répond du lundi au Samedi de 08h à 20h</p>
           <h3 className="text-[16px] text-green-800 font-semibold">
-            +237 695 957 973 <br />
-            +237 653 954 542
+            +237 651 24 56 53 <br />
+            +237 690 64 30 41
           </h3>
           <h3 className="text-[22px] font-semibold pt-6 text-green-800">Réseaux sociaux</h3>
           <p className="text-green-800">
             Retrouvez ITC Santé sur nos réseaux officiels :
           </p>
           {/* links */}
-          <div className="pt-5 flex flex-col gap-2 green-800">
+          <div className="pt-5 flex flex-col gap-2 text-green-800">
             {socialLinks.map(({ icon: Icon, url, label }) => (
               <a
                 key={label}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 hover:text-green-800 pb-2 text-[16px] font-bold"
+                className="flex items-center space-x-2 hover:text-yellow-300 pb-2 text-[16px] font-bold"
               >
                 <Icon className="text-2xl text-green-800" />
                 <span>{label}</span>

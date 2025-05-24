@@ -9,6 +9,15 @@ function ServicesCard({ image, number, title, paragraph, link }) {
         src={image}
         alt={title}
         className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
+        loading="lazy"
+        decoding="async"
+        width="1024"
+        height="384"
+        fetchpriority="low"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.style.opacity = '0.8';
+        }}
       />
 
       {/* Text Overlay */}

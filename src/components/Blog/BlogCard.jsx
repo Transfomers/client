@@ -2,7 +2,21 @@ const BlogCard = ({ post = {}, onEdit, onDelete }) => (
   <div className="bg-yellow-300 rounded-lg p-6 shadow-lg">
     <h2 className="text-2xl font-bold text-green-800">{post?.title}</h2>
     <p className="text-green-900 text-sm">{post?.date ? new Date(post.date).toLocaleDateString() : ''}</p>
-    <img src={post?.image ? `http://localhost:5000/uploads/${post.image}` : ''} alt={post?.title || ''} className="w-full h-64 object-cover rounded-lg" />
+    <img 
+      src={post?.image ? `http://localhost:5000/uploads/${post.image}` : ''} 
+      srcSet={post?.image ? `
+        http://localhost:5000/uploads/small_${post.image} 300w,
+        http://localhost:5000/uploads/${post.image} 800w,
+        http://localhost:5000/uploads/large_${post.image} 1200w
+      ` : ''}
+      sizes="(max-width: 768px) 100vw, 800px"
+      alt={post?.title || ''} 
+      className="w-full h-64 object-cover rounded-lg" 
+      loading="lazy"
+      decoding="async"
+      width="800"
+      height="256"
+    />
     <p className="text-green-900 mt-4">{post?.content}</p>
     <div className="flex justify-end space-x-4 pt-4">
       <button onClick={() => onEdit(post)} className="bg-green-800 text-yellow-300 px-4 py-2 rounded">Edit</button>
