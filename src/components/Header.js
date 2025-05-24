@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 // Import available images
-import flyerImage from "../assets/images/auxilire3.jpg";
+import flyerImage from "../assets/pdf/Formations-santé (1).pdf";
 import heroImage1 from "../assets/images/whyImg1.jpg";
 import heroImage2 from "../assets/images/header2.jpg";
 import heroImage3 from "../assets/images/header3.jpg";
@@ -19,18 +19,21 @@ const Header = () => {
     "ITC Santé forme des professionnels de la santé engagés,plaçant l'humain au cœur de leur pratique et intégrant les innovations médicales de demain. Découvrez nos formations de qualité à Yaoundé.";
 
   const handleDownloadFlyer = () => {
-    const link = document.createElement("a");
-    link.href = flyerImage;
-    link.download = "flyer-itc-sante.jpg";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-   const handleMobileDownload = (e) => {
-    e.preventDefault();
-    window.open(flyerImage, '_blank');
-  };
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+    if (isMobile) {
+      // Open PDF in new tab (most mobile browsers can't force download)
+      window.open(flyerImage, "_blank");
+    } else {
+      // Force download on desktop
+      const link = document.createElement("a");
+      link.href = flyerImage;
+      link.download = "AgentTechniqueLaboratoire-itc-sante.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,22 +55,18 @@ const Header = () => {
         {/* Content container */}
         <div className="relative h-full flex justify-end items-center">
           <div className="bg-black/50 pt-2 m-4 mr-8 max-w-md rounded-lg">
-            <h1 className="text-4xl text-center font-bold text-white mb-4">{slogan}</h1>
-            <p className="text-lg text-white/80 text-center mx-6">{shortDescription}</p>
+            <h1 className="text-4xl text-center font-bold text-white mb-4">
+              {slogan}
+            </h1>
+            <p className="text-lg text-white/80 text-center mx-6">
+              {shortDescription}
+            </p>
 
             <div className="flex flex-col space-y-4">
               {/* Desktop download button - hidden on mobile */}
               <button
                 onClick={handleDownloadFlyer}
                 className="hidden md:flex p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold items-center justify-center gap-2 transition-all"
-              >
-                <FontAwesomeIcon icon={faDownload} /> Télécharger le Flyer
-              </button>
-
-              {/* Mobile download button - visible only on mobile */}
-              <button
-                onClick={handleMobileDownload}
-                className="md:hidden p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold flex items-center justify-center gap-2 transition-all"
               >
                 <FontAwesomeIcon icon={faDownload} /> Télécharger le Flyer
               </button>

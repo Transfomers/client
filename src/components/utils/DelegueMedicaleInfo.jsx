@@ -1,6 +1,6 @@
 import React from 'react';
 import blogLingkaran from '../../assets/images/blogLingkaran.png';
-import image from '../../assets/images/agent3.jpg';
+import image from '../../assets/images/newDelegue.jpg';
 
 
 const DelegueMedicalInfo = () => {
@@ -35,7 +35,7 @@ const DelegueMedicalInfo = () => {
         </div>
           
         {/* Middle horizontal card */}
-        <div className="hidden md:block absolute top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="hidden md:block absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="bg-yellow-50 border border-green-800 text-green-900 px-4 py-3 rounded-xl shadow-md text-center text-base font-medium">
             Contactez-nous aujourd’hui et commencez votre parcours
           </div>

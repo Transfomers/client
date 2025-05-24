@@ -27,7 +27,7 @@ const socialLinks = [
   },
   {
     icon: FaWhatsapp,
-    url: "https://wa.me/237695957973",
+    url: "https://wa.me/237651245653",
     label: "Whatsapp"
   },
   {

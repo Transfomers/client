@@ -6,7 +6,8 @@ import {
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 import backgroundImage from "../../assets/images/assistanceph.png";
-import flyerImage from "../../assets/images/agent5.jpeg";
+// import flyerImages from "../../assets/images/agent5.jpeg";
+import flyerImage from "../../assets/pdf/5.pdf";
 
 const trainingObjectives = [
   {
@@ -50,13 +51,22 @@ const trainingObjectives = [
 ];
 
 const handleDownloadFlyer = () => {
-  const link = document.createElement("a");
-  link.href = flyerImage;
-  link.download = "DelegueMedical-itc-sante.jpg";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Open PDF in new tab (most mobile browsers can't force download)
+    window.open(flyerImage, "_blank");
+  } else {
+    // Force download on desktop
+    const link = document.createElement("a");
+    link.href = flyerImage;
+    link.download = "DelegueMedical-itc-sante.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 };
+
 
 const DelegueMedicalHero = () => {
   const [openIndex, setOpenIndex] = useState(null);

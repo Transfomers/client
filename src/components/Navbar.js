@@ -99,7 +99,7 @@ const Navbar = () => {
       icon: FaTiktok,
       url: "https://www.tiktok.com/@itcsant3?_t=ZS-8vbgt98kamd&_r=1",
     },
-    { icon: FaWhatsapp, url: "https://wa.me/237695957973" },
+    { icon: FaWhatsapp, url: "https://wa.me/237651245653" },
     { icon: FaYoutube, url: "https://www.youtube.com/@itcsante" },
   ];
 

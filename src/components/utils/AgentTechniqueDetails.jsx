@@ -41,56 +41,7 @@ const AgentTechniqueDetails = () => {
 - Recherche appliquée en biotechnologie
 - Industrie cosmétique et plasturgie`,
     },
-//     {
-//       title: "Qualités requises",
-//       content: `- Minutie et sens de l’observation
-// - Organisation et autonomie
-// - Rigueur scientifique et éthique professionnelle
-// - Capacité à travailler en équipe`,
-//     },
-//     {
-//       title: "Compétences professionnelles développées",
-//       content: `- Prélèvements et analyses biologiques
-// - Utilisation d’équipements de laboratoire
-// - Suivi de protocoles expérimentaux
-// - Rédaction de comptes rendus techniques
-// - Maîtrise des normes de sécurité`,
-//     },
-//     {
-//       title: "Hygiène et Sécurité au Laboratoire",
-//       content: `- Connaissance des risques biologiques et chimiques
-// - Port des équipements de protection individuelle (EPI)
-// - Respect des procédures d’élimination des déchets
-// - Plan de prévention des accidents`,
-//     },
-//     {
-//       title: "Utilisation des Outils Informatiques",
-//       content: `- Logiciels de saisie et d’analyse de données
-// - Tableurs et traitement de texte
-// - Systèmes de gestion de laboratoire (LIMS)
-// - Rédaction de rapports numériques`,
-//     },
-//     {
-//       title: "Équipement de Laboratoire",
-//       content: `- Microscope, centrifugeuse, spectrophotomètre
-// - Entretien et calibration des appareils
-// - Protocoles de maintenance
-// - Identification des pannes courantes`,
-//     },
-//     {
-//       title: "Communication et Travail d’Équipe",
-//       content: `- Transmission claire des résultats
-// - Collaboration avec médecins, pharmaciens, chercheurs
-// - Participation aux réunions de service
-// - Sens du contact et du service`,
-//     },
-//     {
-//       title: "Perspectives d’Évolution",
-//       content: `- Spécialisation en biologie médicale ou chimie analytique
-// - Accès à des fonctions de technicien supérieur
-// - Intégration dans la recherche ou l’industrie
-// - Possibilité de reconversion vers la formation ou la vente technique`,
-//     },
+
   ];
 
   return (

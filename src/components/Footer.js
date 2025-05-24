@@ -114,7 +114,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://wa.me/653954542"
+                href="https://wa.me/651245653"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline flex items-center gap-2"
@@ -181,7 +181,7 @@ const Footer = () => {
       <div className="flex justify-center items-center w-full mt-auto py-6">
         <p className="text-sm text-center">
           &copy; {new Date().getFullYear()} ITC Santé. Tous droits réservés.<br />
-          Développé avec ♡ par votre équipe technologique
+          Développé avec ♡ par Ajana .M Safoura
         </p>
       </div>
     </footer>

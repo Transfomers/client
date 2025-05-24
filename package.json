@@ -1,6 +1,6 @@
 {
-  "name": "digisol-website",
-  "homepage": "https://digisolgroup.net",
+  "name": "itc-sante",
+  "homepage": "https://itc-sante.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
