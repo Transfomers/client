@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
-import map from "../assets/icons/map-pin.svg";
+import {  FaDirections } from "react-icons/fa";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -123,9 +123,9 @@ function ContactSection() {
           <p className="text-green-800">Passez nous voir à notre bureau :</p>
           <h3 className="text-[18px] font-semibold pt-2 text-green-800 flex flex-row gap-2 items-center">
             <span>
-              <img src={map} alt="map pin icon" />
+            <FaDirections className="text-green-800 text-2xl mt-1 items-start " />
             </span>
-            ITC Santé, Carrefour Mvog-Ada, Yaoundé, Cameroun
+            ITC Santé, Nkouabang 10e Arrêt Carrefour CEF , Yaoundé, Cameroun
           </h3>
         </div>
         <div className="">
