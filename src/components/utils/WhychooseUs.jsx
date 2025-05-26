@@ -98,7 +98,7 @@ const WhyChooseUs = () => {
                 Certifications Reconnues
               </h3>
               <p className="text-white text-sm">
-                Nos diplômes sont accrédités par le Ministère de la Santé et
+                Nos diplômes sont accrédités par l'Etat et reconnus à l'échelle
                 reconnus à l'échelle internationale.
               </p>
               {/* CTA Section */}

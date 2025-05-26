@@ -123,9 +123,9 @@ function ContactSection() {
           <p className="text-green-800">Passez nous voir à notre bureau :</p>
           <h3 className="text-[18px] font-semibold pt-2 text-green-800 flex flex-row gap-2 items-center">
             <span>
-              <img src={map} alt="map pin icon " />
+              <img src={map} alt="map pin icon" />
             </span>
-            ITC Santé, Yaoundé, Cameroun
+            ITC Santé, Carrefour Mvog-Ada, Yaoundé, Cameroun
           </h3>
         </div>
         <div className="">

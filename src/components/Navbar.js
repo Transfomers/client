@@ -236,7 +236,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-green-800 z-50 p-6 flex flex-col">
+        <div className="md:hidden fixed inset-0 bg-white z-50 p-6 flex flex-col">
           <Link
             to="/"
             className="text-lg font-bold text-green-800 mb-4"
@@ -248,7 +248,7 @@ const Navbar = () => {
           {/* Dropdown Formations Mobile */}
           <div>
             <button
-              className="flex justify-between items-center text-green-800 font-semibold text-lg mb-2"
+              className="flex justify-between items-center text-green-800 font-semibold text-lg mb-2 w-full"
               onClick={toggleServices}
             >
               <span>Formations</span>
@@ -267,7 +267,7 @@ const Navbar = () => {
                     key={to}
                     to={to}
                     onClick={toggleMenu}
-                    className="text-gray-700 hover:text-green-800 block"
+                    className="text-gray-700 hover:text-green-800 block py-2"
                   >
                     {title}
                   </Link>
@@ -278,28 +278,28 @@ const Navbar = () => {
 
           <Link
             to="/about"
-            className="flex justify-between items-center text-green-800 hover:text-green-800 mt-4 font-semibold"
+            className="text-green-800 hover:text-green-600 mt-4 font-semibold py-2"
             onClick={toggleMenu}
           >
             À propos
           </Link>
           <Link
             to="/contact"
-            className="text-green-800 hover:text-green-800 mt-2 font-semibold"
+            className="text-green-800 hover:text-green-600 mt-2 font-semibold py-2"
             onClick={toggleMenu}
           >
             Contact
           </Link>
           <Link
             to="/blog"
-            className="text-green-800 hover:text-green-800 mt-2 font-semibold"
+            className="text-green-800 hover:text-green-600 mt-2 font-semibold py-2"
             onClick={toggleMenu}
           >
             Blog
           </Link>
 
-          <div className="mt-auto pt-6 border-t">
-            <h3 className="font-semibold text-green-800 mb-2">Suivez-nous</h3>
+          <div className="mt-auto pt-6 border-t border-gray-200">
+            <h3 className="font-semibold text-green-800 mb-4">Suivez-nous</h3>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, url }, index) => (
                 <a
@@ -307,7 +307,7 @@ const Navbar = () => {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-800 hover:text-green-600 transition-colors text-xl"
+                  className="text-green-800 hover:text-green-600 transition-colors text-2xl"
                 >
                   <Icon />
                 </a>

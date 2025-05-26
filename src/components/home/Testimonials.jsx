@@ -52,7 +52,7 @@ function Testimonials() {
             <SwiperSlide>
               <TestimonialCard
                 title="Diplôme reconnu"
-                testimonial="Le diplôme obtenu chez ITC Santé est reconnu par le Ministère de la Santé, ce qui m’a ouvert de nombreuses portes."
+                testimonial="Le diplôme obtenu chez ITC Santé est reconnu par l'Etat, ce qui m’a ouvert de nombreuses portes."
               />
             </SwiperSlide>
             <SwiperSlide>
