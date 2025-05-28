@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../../assets/images/our-mission1.png';
 import image1 from '../../assets/images/aboutus1.jpg';
+
 const OurIdentity = () => {
   return (
     <section className="bg-white text-gray-800 py-16 px-6">
@@ -40,7 +41,19 @@ const OurIdentity = () => {
 
         {/* Right Image */}
         <div className="flex justify-center">
-          <img src={image} alt="Notre mission ITC Santé" className="rounded-3xl w-full max-w-md" />
+          <img 
+            src={image} 
+            alt="Notre mission ITC Santé" 
+            className="rounded-3xl w-full max-w-md"
+            loading="eager"
+            decoding="async"
+            width="512"
+            height="512"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.style.opacity = '0.9';
+            }}
+          />
         </div>
       </div>
 
@@ -48,7 +61,19 @@ const OurIdentity = () => {
       <div className="mt-20 grid md:grid-cols-2 gap-10 items-center">
         {/* Left Image */}
         <div className="flex justify-center order-2 md:order-1">
-          <img src={image1} alt="Équipe ITC Santé" className="rounded-3xl w-full max-w-md" />
+          <img 
+            src={image1} 
+            alt="Équipe ITC Santé" 
+            className="rounded-3xl w-full max-w-md"
+            loading="lazy"
+            decoding="async"
+            width="512"
+            height="512"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.style.opacity = '0.9';
+            }}
+          />
         </div>
 
         {/* Right Content */}
@@ -61,10 +86,10 @@ const OurIdentity = () => {
             Formateurs : infirmiers, techniciens de laboratoire et médecins expérimentés, tous en activité.
           </p>
           <p className="text-gray-700 mb-4">
-            Pédagogues : spécialistes des sciences de l’éducation pour une assimilation optimale.
+            Pédagogues : spécialistes des sciences de l'éducation pour une assimilation optimale.
           </p>
           <p className="text-gray-700 mb-4">
-            Conseillers : accompagnement individualisé vers l’insertion professionnelle.
+            Conseillers : accompagnement individualisé vers l'insertion professionnelle.
           </p>
           <p className="text-gray-800 font-semibold">
             Leur conviction : la qualité des soins commence par la qualité de la formation.

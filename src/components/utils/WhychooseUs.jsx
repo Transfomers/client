@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
           <h2 className="text-4xl font-bold text-green-800 mb-4">
             Pourquoi nous choisir pour votre formation ?
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-xl">
             Notre institut est un pilier dans la formation de professionnels
             compétents, prêts à relever les défis du monde moderne.
           </p>

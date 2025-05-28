@@ -180,8 +180,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <div className="flex justify-center items-center w-full mt-auto py-6">
         <p className="text-sm text-center">
-          &copy; {new Date().getFullYear()} ITC Santé. Tous droits réservés.<br />
-          Développé avec ♡ par Ajana .M Safoura
+          &copy; {new Date().getFullYear()} ITC Santé. Tous droits réservés.
         </p>
       </div>
     </footer>

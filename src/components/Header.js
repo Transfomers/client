@@ -14,27 +14,48 @@ const Header = () => {
   const images = [heroImage1, heroImage2, heroImage3, heroImage4];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState([]);
+  const [nextImageLoaded, setNextImageLoaded] = useState(false);
 
   const slogan = "Former autrement, pour soigner mieux !";
   const shortDescription =
     "ITC Santé forme des professionnels de la santé engagés,plaçant l'humain au cœur de leur pratique et intégrant les innovations médicales de demain. Découvrez nos formations de qualité à Yaoundé.";
 
-  // Preload images
+  // Preload next image
+  useEffect(() => {
+    const nextIndex = (currentImageIndex + 1) % images.length;
+    const img = new Image();
+    img.src = images[nextIndex];
+    img.onload = () => {
+      setNextImageLoaded(true);
+      setLoadedImages(prev => [...prev, images[nextIndex]]);
+    };
+  }, [currentImageIndex, images]);
+
+  // Initial images preload
   useEffect(() => {
     const preloadImages = async () => {
       const loadImage = (src) => {
         return new Promise((resolve, reject) => {
           const img = new Image();
           img.src = src;
-          img.loading = "lazy";
           img.onload = () => resolve(src);
           img.onerror = reject;
         });
       };
 
       try {
-        const loadedSrcs = await Promise.all(images.map(loadImage));
-        setLoadedImages(loadedSrcs);
+        // Load first two images immediately
+        const initialImages = await Promise.all([
+          loadImage(images[0]),
+          loadImage(images[1])
+        ]);
+        setLoadedImages(initialImages);
+
+        // Load remaining images
+        const remainingImages = await Promise.all(
+          images.slice(2).map(loadImage)
+        );
+        setLoadedImages(prev => [...prev, ...remainingImages]);
       } catch (error) {
         console.error('Error preloading images:', error);
       }
@@ -43,6 +64,17 @@ const Header = () => {
     preloadImages();
   }, [images]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (nextImageLoaded) {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setNextImageLoaded(false);
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [nextImageLoaded, images.length]);
+
   const handleDownloadFlyer = () => {
     try {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -50,10 +82,8 @@ const Header = () => {
       const fileName = "ITC-Sante-Formations.pdf";
 
       if (isMobile) {
-        // For mobile devices, open in a new tab first
         window.open(downloadUrl, '_blank');
         
-        // Also create a fallback download link
         const link = document.createElement('a');
         link.href = downloadUrl;
         link.download = fileName;
@@ -64,7 +94,6 @@ const Header = () => {
           document.body.removeChild(link);
         }, 100);
       } else {
-        // For desktop devices
         const link = document.createElement('a');
         link.href = downloadUrl;
         link.download = fileName;
@@ -74,18 +103,9 @@ const Header = () => {
       }
     } catch (error) {
       console.error('Download error:', error);
-      // Fallback: open in new tab
       window.open(flyerImage, '_blank');
     }
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval); // Cleanup
-  }, [images.length]);
 
   return (
     <div className="relative">
@@ -98,12 +118,14 @@ const Header = () => {
         }}
       >
         {/* Preload next image */}
-        <link 
-          rel="preload" 
-          as="image" 
-          href={images[(currentImageIndex + 1) % images.length]} 
-          key={currentImageIndex}
-        />
+        {nextImageLoaded && (
+          <link 
+            rel="preload" 
+            as="image" 
+            href={images[(currentImageIndex + 1) % images.length]} 
+            key={currentImageIndex}
+          />
+        )}
 
         {/* Background overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
@@ -118,7 +140,7 @@ const Header = () => {
               {shortDescription}
             </p>
 
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 p-4">
               <button
                 onClick={handleDownloadFlyer}
                 className="flex p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold items-center justify-center gap-2 transition-all md:text-lg"

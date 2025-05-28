@@ -5,16 +5,14 @@ import blogLingkaran from "../../assets/images/blogLingkaran.png";
 import flyerImage from "../../assets/pdf/2.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+
 const AssistantEnCabinetMedicalHero = () => {
- 
   const handleDownloadFlyer = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   
     if (isMobile) {
-      // Open in new tab for manual download
       window.open(flyerImage, '_blank');
     } else {
-      // Desktop: force download
       const link = document.createElement("a");
       link.href = flyerImage;
       link.setAttribute("download", "AssistantEnCabinetMedical-itc-sante.pdf");
@@ -23,6 +21,7 @@ const AssistantEnCabinetMedicalHero = () => {
       document.body.removeChild(link);
     }
   };
+
   return (
     <section className="relative w-full bg-white overflow-hidden">
       <div className="grid md:grid-cols-2 items-center max-w-7xl mx-auto px-4 py-16 gap-10">
@@ -33,6 +32,10 @@ const AssistantEnCabinetMedicalHero = () => {
             src={blogLingkaran}
             alt="Background decoration"
             className="absolute -top-10 -left-10 w-96 opacity-10 z-0"
+            loading="eager"
+            decoding="async"
+            width="384"
+            height="384"
           />
 
           <h1
@@ -70,11 +73,23 @@ const AssistantEnCabinetMedicalHero = () => {
             src={coverImage}
             alt="Assistant en Cabinet Médical"
             className="rounded-xl shadow-xl object-cover w-full h-full"
+            loading="eager"
+            decoding="async"
+            width="800"
+            height="600"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.style.opacity = '0.9';
+            }}
           />
           <img
             src={flyerImages}
             alt="Flyer"
             className="absolute bottom-4 right-4 w-32 h-32 border-4 border-white rounded-lg shadow-lg"
+            loading="lazy"
+            decoding="async"
+            width="128"
+            height="128"
           />
         </div>
       </div>
