@@ -32,9 +32,9 @@ const WhyChooseUs = () => {
           <div className="space-y-8">
             {/* Statistics Section */}
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h1 className="semi-bold text-green-800 mx-auto text-center text-xl">
-                Taux de Reusite{" "}
-              </h1>
+              <h3 className="text-xl font-semibold text-green-800 text-center mb-6">
+                Taux de Réussite
+              </h3>
               <div className="space-y-6">
                 {/* Progress Bars */}
                 {[
@@ -49,9 +49,9 @@ const WhyChooseUs = () => {
                         {stat.percentage}%
                       </span>
                     </div>
-                    <div className="h-3 bg-gray-200 rounded-full">
+                    <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-green-600 rounded-full transition-all duration-500"
+                        className="h-full bg-green-600 rounded-full transition-all duration-500 ease-out"
                         style={{ width: `${stat.percentage}%` }}
                       ></div>
                     </div>
@@ -73,7 +73,11 @@ const WhyChooseUs = () => {
                 <img
                   src={whyImg2}
                   alt="Formation pratique"
-                  className="w-full h-full 1/2 clip-top-half"
+                  className="w-full h-full object-cover clip-top-half"
+                  loading="lazy"
+                  decoding="async"
+                  width="256"
+                  height="256"
                 />
               </div>
               <div className="absolute inset-0">
@@ -81,6 +85,10 @@ const WhyChooseUs = () => {
                   src={whyImg3}
                   alt="Équipe pédagogique"
                   className="w-full h-full object-cover clip-bottom-half"
+                  loading="lazy"
+                  decoding="async"
+                  width="256"
+                  height="256"
                 />
               </div>
             </div>
@@ -92,6 +100,11 @@ const WhyChooseUs = () => {
               src={whyImg1}
               alt="Étudiants en formation"
               className="rounded-lg shadow-lg w-full h-[600px] object-cover"
+              loading="eager"
+              decoding="async"
+              width="800"
+              height="600"
+              fetchpriority="high"
             />
             <div className="absolute -bottom-8 left-8 right-8 bg-yellow-500 p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold mb-2">
@@ -99,14 +112,14 @@ const WhyChooseUs = () => {
               </h3>
               <p className="text-white text-sm">
                 Nos diplômes sont accrédités par l'Etat et reconnus à l'échelle
-                reconnus à l'échelle internationale.
+                internationale.
               </p>
               {/* CTA Section */}
-              <div className="text-center mt-16">
+              <div className="text-center mt-8">
                 <Link
                   to="/about"
                   className="inline-block bg-green-800 text-white px-8 py-3 rounded-lg 
-                                hover:bg-green-700 transition-colors duration-300 text-lg font-semibold"
+                  hover:bg-green-700 transition-colors duration-300 text-lg font-semibold"
                 >
                   PLUS D'INFORMATIONS
                 </Link>

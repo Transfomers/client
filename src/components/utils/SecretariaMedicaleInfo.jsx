@@ -10,7 +10,20 @@ const SecreteriatMedicalInfo = () => {
         
         {/* Left image with text overlay */}
         <div className="relative flex-1 h-[420px]">
-          <img src={blogLingkaran} alt="Secrétariat Médical" className="w-full h-full object-cover rounded-2xl" />
+          <img 
+            src={blogLingkaran} 
+            alt="Secrétariat Médical" 
+            className="w-full h-full object-cover rounded-2xl"
+            loading="eager"
+            decoding="async"
+            width="800"
+            height="420"
+            fetchpriority="high"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.style.opacity = '0.9';
+            }}
+          />
           
           {/* Overlaid welcome text */}
           <div className="absolute inset-0 flex flex-col justify-start items-start p-6 sm:p-10">
@@ -23,7 +36,6 @@ const SecreteriatMedicalInfo = () => {
             <p className="mt-4 text-white text-base sm:text-lg max-w-md">
               Rejoignez une formation professionnelle complète et ouvrez les portes du secteur médical.
             </p>
-            
           </div>
 
           {/* Floating card on left */}
@@ -37,13 +49,25 @@ const SecreteriatMedicalInfo = () => {
         {/* Middle horizontal card */}
         <div className="hidden md:block absolute top-[25%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="bg-yellow-50 border border-green-800 text-green-900 px-6 py-3 rounded-xl shadow-md text-center text-base font-medium">
-            Contactez-nous aujourd’hui et commencez votre parcours
+            Contactez-nous aujourd'hui et commencez votre parcours
           </div>
         </div>
 
         {/* Right image with floating cards */}
         <div className="relative flex-1 h-[420px] mt-10 md:mt-0 md:-translate-y-6">
-          <img src={image} alt="Lire plus" className="w-full h-full object-cover rounded-2xl shadow-lg" />
+          <img 
+            src={image} 
+            alt="Secrétariat Médical en action" 
+            className="w-full h-full object-cover rounded-2xl shadow-lg"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="420"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.style.opacity = '0.9';
+            }}
+          />
           
           <div className="absolute bottom-20 left-4 bg-yellow-50 border border-green-800 text-green-900 px-5 py-2 rounded-xl shadow-md text-sm font-medium max-w-xs">
             Notre équipe vous répond rapidement par mail ou téléphone
