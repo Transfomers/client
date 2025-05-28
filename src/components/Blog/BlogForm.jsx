@@ -6,7 +6,6 @@ const BlogForm = ({ onSubmit, initialData = {} }) => {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState('');
   const [isDragging, setIsDragging] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
     if (initialData && initialData.title) {
@@ -18,45 +17,32 @@ const BlogForm = ({ onSubmit, initialData = {} }) => {
     }
   }, [initialData]);
 
-  const processImage = async (file) => {
-    if (!file) return null;
-    
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      alert('Veuillez télécharger une image');
-      return null;
-    }
-    
-    // Validate file size (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      alert("La taille de l'image doit être inférieure à 5MB");
-      return null;
-    }
+  const handleImageChange = (e) => {
+    const file = e.target.files?.[0];
+    handleFile(file);
+  };
 
-    try {
-      setIsProcessing(true);
+  const handleFile = (file) => {
+    if (file) {
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        alert('Veuillez télécharger une image');
+        return;
+      }
       
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        alert("La taille de l'image doit être inférieure à 5MB");
+        return;
+      }
+
+      setImage(file);
       // Create preview URL
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
-        setIsProcessing(false);
       };
       reader.readAsDataURL(file);
-      
-      return file;
-    } catch (error) {
-      console.error('Error processing image:', error);
-      setIsProcessing(false);
-      return null;
-    }
-  };
-
-  const handleImageChange = async (e) => {
-    const file = e.target.files?.[0];
-    const processedImage = await processImage(file);
-    if (processedImage) {
-      setImage(processedImage);
     }
   };
 
@@ -70,23 +56,20 @@ const BlogForm = ({ onSubmit, initialData = {} }) => {
     setIsDragging(false);
   };
 
-  const handleDrop = async (e) => {
+  const handleDrop = (e) => {
     e.preventDefault();
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
-    const processedImage = await processImage(file);
-    if (processedImage) {
-      setImage(processedImage);
-    }
+    handleFile(file);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', content);
     if (image) formData.append('image', image);
-    await onSubmit(formData);
+    onSubmit(formData);
     setTitle('');
     setContent('');
     setImage(null);
@@ -129,7 +112,7 @@ const BlogForm = ({ onSubmit, initialData = {} }) => {
           Image de l'article
         </label>
         <div
-          className={`relative border-2 border-dashed rounded-lg p-6 text-center transition-colors duration-200 ${
+          className={`relative border-2 border-dashed rounded-lg p-6 text-center ${
             isDragging ? 'border-green-500 bg-green-50' : 'border-gray-300'
           }`}
           onDragOver={handleDragOver}
@@ -153,20 +136,14 @@ const BlogForm = ({ onSubmit, initialData = {} }) => {
           </div>
         </div>
 
-        {isProcessing && (
-          <div className="mt-4 text-center text-sm text-gray-600">
-            Traitement de l'image...
-          </div>
-        )}
-
-        {imagePreview && !isProcessing && (
+        {imagePreview && (
           <div className="mt-4">
-            <div className="relative aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
               <img
                 src={imagePreview}
                 alt="Aperçu"
-                className="object-cover w-full h-full rounded-lg"
-                loading="eager"
+                className="object-cover w-full h-full"
+                loading="lazy"
                 decoding="async"
               />
               <button
@@ -187,9 +164,7 @@ const BlogForm = ({ onSubmit, initialData = {} }) => {
 
       <button 
         type="submit"
-        disabled={isProcessing} 
-        className={`w-full sm:w-auto px-6 py-3 bg-green-700 text-white text-base sm:text-lg font-medium rounded-lg transition-colors duration-200 flex items-center justify-center
-          ${isProcessing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-800'}`}
+        className="w-full sm:w-auto px-6 py-3 bg-green-700 hover:bg-green-800 text-white text-base sm:text-lg font-medium rounded-lg transition-colors duration-200 flex items-center justify-center"
       >
         {initialData?._id ? "Mettre à jour l'article" : "Publier l'article"}
       </button>
