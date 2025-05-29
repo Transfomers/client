@@ -141,22 +141,21 @@ const Header = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <header className="relative h-screen w-full overflow-hidden">
-        {/* Image Container with optimized loading */}
-        <div className="absolute inset-0">
+        {/* Image Container with optimized loading and mobile fixes */}
+        <div className="absolute inset-0 w-full h-full">
           {images.map((image, index) => (
             <div
               key={image}
-              className={`absolute inset-0 transition-opacity duration-300 ease-in-out ${
+              className={`absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out ${
                 currentImageIndex === index ? "opacity-100" : "opacity-0"
               } ${isTransitioning ? "transition-transform duration-300 scale-105" : "scale-100"}`}
-              style={{ aspectRatio: imageDimensions.aspectRatio }}
             >
               <img
                 src={image}
                 alt={`Hero ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
                 loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
                 fetchpriority={index === 0 ? "high" : "low"}
@@ -171,34 +170,34 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Content Overlay with optimized rendering */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-end">
-          <div className="pr-8 md:pr-16 lg:pr-24 w-full max-w-[400px] md:max-w-lg lg:max-w-xl">
+        {/* Content Overlay with mobile optimization */}
+        <div className="relative z-10 h-full w-full flex flex-col justify-center items-end px-4 sm:px-6 md:px-8">
+          <div className="w-full max-w-[90%] sm:max-w-[400px] md:max-w-lg lg:max-w-xl ml-auto">
             <Suspense fallback={<div className="animate-pulse bg-white/10 rounded-2xl h-96"></div>}>
-              {/* Card Container */}
-              <div className="bg-white/10 p-1 rounded-2xl border border-white/20 shadow-xl transform transition-all duration-500">
+              {/* Card Container with improved mobile layout */}
+              <div className="bg-white/10 p-1 rounded-2xl border border-white/20 shadow-xl backdrop-blur-sm transform transition-all duration-500">
                 {/* Card Content */}
                 <div
-                  className={`bg-black/75 p-4 md:p-5 rounded-xl backdrop-blur-sm transform transition-all duration-500 ease-out
+                  className={`bg-black/75 p-4 md:p-5 rounded-xl transform transition-all duration-500 ease-out
                     ${isVisible ? "translate-x-0 opacity-100 scale-100" : "translate-x-full opacity-0 scale-95"}`}
                 >
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white text-center">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight text-white text-center">
                     {slogan}
                   </h1>
-                  <p className="text-sm md:text-base mb-5 text-white leading-relaxed text-center">
+                  <p className="text-sm md:text-base mb-4 md:mb-5 text-white leading-relaxed text-center">
                     {shortDescription}
                   </p>
-                  <div className="flex flex-col space-y-4 items-center">
+                  <div className="flex flex-col space-y-3 md:space-y-4 items-center">
                     <button
                       onClick={handleDownloadFlyer}
-                      className="w-full max-w-[300px] flex p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold items-center justify-center gap-2 transition-all text-sm md:text-base transform hover:scale-105 shadow-lg"
+                      className="w-full max-w-[300px] flex p-3 md:p-4 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-green-800 font-semibold items-center justify-center gap-2 transition-all text-sm md:text-base transform hover:scale-105 shadow-lg"
                     >
                       <FontAwesomeIcon icon={faDownload} /> Télécharger le Flyer
                     </button>
 
                     <Link
                       to="/contact"
-                      className="w-full max-w-[300px] p-4 rounded-lg bg-green-700 hover:bg-green-600 text-yellow-300 font-semibold text-center transition-all text-sm md:text-base transform hover:scale-105 shadow-lg"
+                      className="w-full max-w-[300px] p-3 md:p-4 rounded-lg bg-green-700 hover:bg-green-600 text-yellow-300 font-semibold text-center transition-all text-sm md:text-base transform hover:scale-105 shadow-lg"
                     >
                       Contactez-Nous
                     </Link>
