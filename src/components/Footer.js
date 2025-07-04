@@ -3,7 +3,6 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa6";
 import Logo from "../assets/logos/logo.png";
 
-
 const Footer = () => {
   return (
     <footer className="bg-green-800 text-white py-14 px-6 flex flex-col min-h-screen mt-[100px]">
@@ -13,8 +12,10 @@ const Footer = () => {
           <div className="flex flex-col font-body pr-3">
             <h4 className="text-lg font-semibold">Restez Informé</h4>
             <p>
-              Abonnez-vous à notre newsletter pour les dernières actualités médicales,<br />
-              innovations en santé, et opportunités de formation. 🩺
+              Abonnez-vous à notre newsletter pour les dernières actualités
+              médicales,
+              <br />
+              innovations en santé, et opportunités de formation. 👩‍⚕️ 
             </p>
           </div>
           <div className="relative max-sm:w-full max-md:w-full">
@@ -33,15 +34,14 @@ const Footer = () => {
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-4 gap-8 mt-[50px] w-[96%] mx-auto font-body max-sm:grid-cols-1 max-w-8xl">
-
         {/* Formations Column */}
         <div>
           <h5 className="font-semibold pb-5 text-[20px]">Formations</h5>
           <ul className="space-y-3 text-[14px]">
             <li>
               <a href="/auxiliaireDeVie" className="hover:underline">
-
-                Auxiliaire De Vie              </a>
+                Auxiliaire De Vie{" "}
+              </a>
             </li>
             <li>
               <a href="/secretariatMedical" className="hover:underline">
@@ -60,11 +60,13 @@ const Footer = () => {
             </li>
             <li>
               <a href="/vendeurPharmacie" className="hover:underline">
-                Vendeur En Pharmacie              </a>
+                Vendeur En Pharmacie{" "}
+              </a>
             </li>
             <li>
               <a href="/agentTechniqueLaboratoire" className="hover:underline">
-                Aide Chimiste Biologiste              </a>
+                Aide Chimiste Biologiste{" "}
+              </a>
             </li>
           </ul>
         </div>
@@ -93,7 +95,16 @@ const Footer = () => {
                 Contact
               </a>
             </li>
-
+            <li>
+              <a
+                href="https://www.google.com/maps/place/ITC+Sant%C3%A9/@3.846017,11.572237,17z/data=!4m6!3m5!1s0x0:0x0!7e2!8m2!3d3.846017!4d11.572237"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Localisation: Carrefour CEF, Nkoabang, Yaoundé
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -178,9 +189,13 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="flex justify-center items-center w-full mt-auto py-6">
-        <p className="text-sm text-center">
-          &copy; {new Date().getFullYear()} ITC Santé. Tous droits réservés.
+      <div className="flex justify-center items-center w-full mt-auto py-6 ">
+        <p className="text-sm mb-6 text-center max-w-2xl mt-12">
+          ITC Santé – Institut de Formation Paramédicale de Yaoundé est situé à{" "}
+          <b>Carrefour CEF, Nkoabang, Yaoundé</b>.
+          <p className="text-sm text-center mt-4">
+            &copy; {new Date().getFullYear()} ITC Santé. Tous droits réservés.
+          </p>
         </p>
       </div>
     </footer>

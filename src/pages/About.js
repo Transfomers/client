@@ -1,9 +1,21 @@
 import React from "react";
 import aiCoverImage3 from "../assets/images/aboutus.jpg";
 import OurIdentity from "../components/utils/Ouridentity";
+import { Helmet } from "react-helmet";
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title>À propos de ITC Santé | Institut de Formation Paramédicale à Yaoundé</title>
+        <meta name="description" content="Découvrez l'histoire, la mission et les valeurs de ITC Santé, institut de formation professionnelle en santé et paramédical à Yaoundé, Cameroun. Formation santé, éthique, innovation, excellence pédagogique." />
+        <meta name="keywords" content="ITC Santé, institut paramédical Yaoundé, formation santé Cameroun, formation professionnelle santé, école de santé, formation paramédicale, éthique médicale, innovation santé, excellence pédagogique, formation auxiliaire de vie, technicien de laboratoire, assistant médical, vendeur pharmacie, délégué médical, aide chimiste biologiste" />
+        <meta property="og:title" content="À propos de ITC Santé | Institut de Formation Paramédicale à Yaoundé" />
+        <meta property="og:description" content="ITC Santé forme les professionnels de la santé de demain à Yaoundé. Découvrez notre vision, nos valeurs et notre engagement pour une formation d'excellence." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ITC Santé" />
+        <meta property="og:locale" content="fr_FR" />
+        <link rel="canonical" href="https://www.itc-sante.com/about" />
+      </Helmet>
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-10">

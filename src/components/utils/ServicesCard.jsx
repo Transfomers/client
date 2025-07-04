@@ -38,46 +38,46 @@ const ServiceCard = ({ image, number, title, paragraph, link }) => (
 const ServicesCard = () => {
   const services = [
     {
-      image: DefaultImage1,
+      image: DefaultImage6,
       number: "1",
-      title: "Secrétariat Médical",
-      paragraph: "DQP (Diplôme de qualification professionnelle)",
-      link: "/SecretariatMedical"
-    },
-    {
-      image: DefaultImage2,
-      number: "2",
-      title: "Vendeur en Pharmacie",
-      paragraph: "DQP (Diplôme de qualification professionnelle)",
-      link: "/VendeurPharmacie"
+      title: "Auxiliaire de vie",
+      paragraph: "Apprenez à accompagner les personnes âgées, malades ou en situation de handicap. Compétences : soins d’hygiène, accompagnement moral, gestion de la vie quotidienne.",
+      link: "/AuxiliareDeVie"
     },
     {
       image: DefaultImage3,
-      number: "3",
-      title: "Délégué Médical",
-      paragraph: "DQP (Diplôme de qualification professionnelle)",
-      link: "/DelegueMedical"
+      number: "2",
+      title: "Technicien de Laboratoire",
+      paragraph: "Devenez un acteur clé du diagnostic médical. Compétences : analyses biologiques, prélèvements, entretien du matériel.",
+      link: "/AgentTechniqueLaboratoire"
     },
     {
       image: DefaultImage4,
-      number: "4",
+      number: "3",
       title: "Assistant en Cabinet Médical",
-      paragraph: "CQP (Certificat de qualification professionnelle)",
+      paragraph: "Préparez-vous à assister les médecins au quotidien. Compétences : accueil des patients, gestion des dossiers, suivi des consultations.",
       link: "/AssistantEnCabinetMedical"
+    },
+    {
+      image: DefaultImage2,
+      number: "4",
+      title: "Vendeur / Auxiliaire en Pharmacie",
+      paragraph: "Formez-vous à la vente de produits pharmaceutiques en officine. Compétences : conseils clients, gestion de stock, bases de pharmacologie.",
+      link: "/VendeurEnPharmacie"
     },
     {
       image: DefaultImage5,
       number: "5",
-      title: "Aide Chimiste et Biologiste",
-      paragraph: "CQP (Certificat de qualification professionnelle)",
-      link: "/AideChimiste"
+      title: "Délégué Médical",
+      paragraph: "Devenez un ambassadeur des laboratoires pharmaceutiques. Compétences : communication médicale, promotion de médicaments, visites aux professionnels de santé.",
+      link: "/DelegueMedical"
     },
     {
-      image: DefaultImage6,
+      image: DefaultImage1,
       number: "6",
-      title: "Auxiliaire de Vie",
-      paragraph: "CQP (Certificat de qualification professionnelle)",
-      link: "/AuxiliaireDeVie"
+      title: "Aide Chimiste / Biologiste",
+      paragraph: "Initiez-vous aux techniques de base en chimie et biologie. Compétences : préparation d’échantillons, techniques de laboratoire, analyses simples.",
+      link: "/SecretariaMedical"
     }
   ];
 

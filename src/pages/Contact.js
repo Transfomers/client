@@ -9,7 +9,7 @@ function Contact() {
       <ContactBooking />
       <ContactSection />
 
-      <div className="my-[100px] text-green-800">
+      <div className="my-[100px] text-green-800 w-full">
         <div className="relative">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.7968675770993!2d11.572237!3d3.846017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTAnNDUuNyJOIDExwrAzNCcyMC4xIkU!5e0!3m2!1sfr!2scm!4v1716460916789!5m2!1sfr!2scm"
@@ -30,7 +30,7 @@ function Contact() {
               <div>
                 <h3 className="font-semibold text-green-800">ITC Santé</h3>
                 <p className="text-sm text-gray-600 leading-tight">
-                  Nkouabang 10e Arrêt<br />
+                  Nkoabang 10e Arrêt<br />
                   Carrefour CEF<br />
                   Yaoundé, Cameroun
                 </p>

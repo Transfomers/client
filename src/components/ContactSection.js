@@ -68,7 +68,7 @@ function ContactSection() {
     
         emailjs
           .send(
-            "0_987654321", // Replace with your EmailJS service ID
+            "service_80h07m", // Replace with your EmailJS service ID
             "0_123456789", // Replace with your EmailJS template ID
             templateParams,
             "Dt4VQmRfXVRbnZrE7" // Replace with your EmailJS public key
@@ -128,10 +128,10 @@ function ContactSection() {
             ITC Santé, Nkouabang 10e Arrêt Carrefour CEF , Yaoundé, Cameroun
           </h3>
         </div>
-        <div className="">
+        <div className="flex-1 w-full">
           <form
             onSubmit={handleSubmit}
-            className="bg-white rounded-lg  w-full max-w-lg h-full "
+            className="bg-white rounded-lg w-full h-full p-8 shadow-xl"
           >
             {/* First and Last Name Row */}
             <div className="grid grid-cols-2 gap-4 mb-4">

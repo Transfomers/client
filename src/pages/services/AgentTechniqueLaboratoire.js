@@ -17,6 +17,7 @@ const AgentTechniqueLaboratoire = () => {
       <AgentTechniqueDetails/>
       <AgentTechniqueHero/>
       <ContactSection />
+      
     </div>
   )
 }
