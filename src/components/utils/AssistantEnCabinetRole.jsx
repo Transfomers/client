@@ -1,7 +1,7 @@
 import React from 'react';
-import imgOne from '../../assets/images/SecretaireMedicale.jpg';
-import imgTwo from '../../assets/images/SecretaireMedicale1.jpg';
-import imgThree from '../../assets/images/SecretaireMedicale2.jpg';
+import imgOne from '../../assets/myimages/sante39.jpg';
+import imgTwo from '../../assets/myimages/sante48.jpg';
+import imgThree from '../../assets/myimages/sante10.jpg';
 
 const AssistantEnCabinetRole = () => {
   const sections = [

@@ -1,6 +1,6 @@
 import React from 'react';
-import image from '../../assets/images/our-mission1.png';
-import image1 from '../../assets/images/aboutus1.jpg';
+import image from '../../assets/myimages/about2.jpg';
+import image1 from '../../assets/myimages/about3.jpg';
 
 const OurIdentity = () => {
   return (

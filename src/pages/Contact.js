@@ -3,9 +3,23 @@ import ContactSection from "../components/ContactSection";
 import ContactBooking from "../components/home/ContactBooking";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
+import { Helmet } from "react-helmet";
+
 function Contact() {
   return (
     <div className="mx-[34px] text-body">
+      <Helmet>
+        <html lang="fr" />
+        <title>Contact ITC Santé | Centre de formation professionnelle santé à Yaoundé Cameroun</title>
+        <meta name="description" content="Contactez ITC Santé, centre de formation professionnelle en santé et école paramédicale à Yaoundé, Cameroun. Où se former en santé à Yaoundé ? Formation soins de santé, diplôme paramédical, études santé Cameroun." />
+        <meta name="keywords" content="formation santé Cameroun, école paramédicale Cameroun, formation professionnelle santé Yaoundé, centre de formation médicale Cameroun, études santé Cameroun, institut de formation santé Cameroun, formation soins de santé Yaoundé, diplôme paramédical Cameroun, meilleure école santé Cameroun" />
+        <meta property="og:title" content="Contact ITC Santé | Centre de formation professionnelle santé à Yaoundé Cameroun" />
+        <meta property="og:description" content="Contactez ITC Santé pour vos études santé au Cameroun, formation paramédicale, auxiliaire de vie, technicien de laboratoire, assistant médical, pharmacie, délégué médical à Yaoundé." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ITC Santé" />
+        <meta property="og:locale" content="fr_FR" />
+        <link rel="canonical" href="https://www.itc-sante.com/contact" />
+      </Helmet>
       <ContactBooking />
       <ContactSection />
 

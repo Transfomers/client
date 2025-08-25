@@ -1,6 +1,6 @@
 import React from "react";
-import coverImage from "../../assets/images/assistante1.jpg";
-import flyerImages from "../../assets/images/assistanceph.png";
+import coverImage from "../../assets/myimages/sante25.jpg";
+import flyerImages from "../../assets/myimages/sante16.jpg";
 import blogLingkaran from "../../assets/images/blogLingkaran.png";
 import flyerImage from "../../assets/pdf/2.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

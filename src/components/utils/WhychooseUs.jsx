@@ -6,9 +6,9 @@ import {
   FaBriefcase,
   FaUsers,
 } from "react-icons/fa";
-import whyImg1 from "../../assets/images/auxilire3.jpg";
-import whyImg2 from "../../assets/images/whyImg2.jpg";
-import whyImg3 from "../../assets/images/whyImg3.jpg";
+import whyImg1 from "../../assets/myimages/competence1.jpg";
+import whyImg2 from "../../assets/myimages/sante6.jpg";
+import whyImg3 from "../../assets/myimages/sante45.jpg";
 import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {

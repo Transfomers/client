@@ -12,6 +12,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const Admin = lazy(() => import("./pages/Admin"));
 const BlogPage = lazy(() => import("./components/Blog/pages/BlogPage"));
 const AdminPage = lazy(() => import("./components/Blog/pages/AdminPage"));
+const FAQ = lazy(() => import("./pages/FAQ"));
 
 // Lazy load service pages
 const SecretariatMedical = lazy(() => import("./pages/services/SecretariaMedical"));
@@ -84,6 +85,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/Admin" element={<Admin />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/" element={<BlogPage />} />
           <Route path="/AdminPage" element={<AdminPage />} />
           

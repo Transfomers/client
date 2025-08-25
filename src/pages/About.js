@@ -1,16 +1,17 @@
 import React from "react";
-import aiCoverImage3 from "../assets/images/aboutus.jpg";
+import aiCoverImage3 from "../assets/myimages/team1.jpg";
 import OurIdentity from "../components/utils/Ouridentity";
 import { Helmet } from "react-helmet";
 const About = () => {
   return (
     <div>
       <Helmet>
-        <title>À propos de ITC Santé | Institut de Formation Paramédicale à Yaoundé</title>
-        <meta name="description" content="Découvrez l'histoire, la mission et les valeurs de ITC Santé, institut de formation professionnelle en santé et paramédical à Yaoundé, Cameroun. Formation santé, éthique, innovation, excellence pédagogique." />
-        <meta name="keywords" content="ITC Santé, institut paramédical Yaoundé, formation santé Cameroun, formation professionnelle santé, école de santé, formation paramédicale, éthique médicale, innovation santé, excellence pédagogique, formation auxiliaire de vie, technicien de laboratoire, assistant médical, vendeur pharmacie, délégué médical, aide chimiste biologiste" />
-        <meta property="og:title" content="À propos de ITC Santé | Institut de Formation Paramédicale à Yaoundé" />
-        <meta property="og:description" content="ITC Santé forme les professionnels de la santé de demain à Yaoundé. Découvrez notre vision, nos valeurs et notre engagement pour une formation d'excellence." />
+        <html lang="fr" />
+        <title>Institut de formation santé Cameroun – ITC Santé | École paramédicale à Yaoundé</title>
+        <meta name="description" content="ITC Santé, institut de formation professionnelle en santé et école paramédicale à Yaoundé, Cameroun. Découvrez nos formations : auxiliaire de vie, technicien de laboratoire, assistant médical, auxiliaire pharmacie, délégué médical. Études santé Cameroun, diplôme paramédical, centre de formation médicale, formation soins de santé Yaoundé. Où se former en santé à Yaoundé ?" />
+        <meta name="keywords" content="formation santé Cameroun, école paramédicale Cameroun, formation professionnelle santé Yaoundé, meilleure école santé Cameroun, formation auxiliaire de vie Cameroun, formation technicien de laboratoire Cameroun, formation assistant médical Cameroun, formation auxiliaire pharmacie Cameroun, formation délégué médical Cameroun, études santé Cameroun, institut de formation santé Cameroun, diplôme paramédical Cameroun, formation soins de santé Yaoundé, formation professionnelle en santé, centre de formation médicale Cameroun" />
+        <meta property="og:title" content="Institut de formation santé Cameroun – ITC Santé | École paramédicale à Yaoundé" />
+        <meta property="og:description" content="ITC Santé, meilleure école de santé et centre de formation paramédicale à Yaoundé, Cameroun. Formations certifiantes : auxiliaire de vie, technicien de laboratoire, assistant médical, pharmacie, délégué médical. Pourquoi choisir ITC Santé pour ses études de santé ?" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="ITC Santé" />
         <meta property="og:locale" content="fr_FR" />
@@ -126,7 +127,7 @@ const About = () => {
             <div className="lg:w-1/2 flex justify-center">
               <img
                 src={aiCoverImage3}
-                alt="Photos étudiants ITC Santé"
+                alt="étudiants en formation paramédicale à Yaoundé – ITC Santé, école professionnelle santé Cameroun"
                 className="rounded-3xl w-full max-w-md"
               />
             </div>

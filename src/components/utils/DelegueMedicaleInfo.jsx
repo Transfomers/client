@@ -1,6 +1,6 @@
 import React from 'react';
 import blogLingkaran from '../../assets/images/blogLingkaran.png';
-import image from '../../assets/images/newDelegue.jpg';
+import image from '../../assets/myimages/sante16.jpg';
 
 
 const DelegueMedicalInfo = () => {

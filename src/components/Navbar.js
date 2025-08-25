@@ -120,71 +120,75 @@ const Navbar = () => {
      
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex space-x-8 items-center">
-        <Link to="/" className={navLinkStyle}>
-          Accueil
-        </Link>
-
-        {/* Services Dropdown */}
-        <div
-          className="relative group"
-          onMouseEnter={() => setIsServicesOpen(true)}
-          onMouseLeave={() => setIsServicesOpen(false)}
-        >
+      <div className="hidden md:flex w-full items-center justify-between">
+       
+        {/* Centered Menu */}
+        <div className="flex items-center justify-center flex-1 space-x-6">
+          <Link to="/" className={navLinkStyle}>
+            Accueil
+          </Link>
+          {/* Services Dropdown */}
           <div
-            className={`${navLinkStyle} group flex items-center gap-1 cursor-pointer`}
+            className="relative group"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <span>Formations</span>
-            <img
-              src={down}
-              alt="dropdown"
-              className="w-4 mt-1 transition-transform group-hover:rotate-180"
-            />
-          </div>
-          <div
-            className={`
-      absolute top-10 left-0 bg-white rounded-xl shadow-lg p-4 w-[500px] z-50
-      transition-all duration-300 ease-out
-      ${
-        isServicesOpen
-          ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-          : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-      }
-    `}
-            style={{ boxShadow: "0 8px 32px rgba(166, 198, 118, 0.12)" }}
-          >
-            <div className="grid grid-cols-2 gap-4">
-              {services.map(({ to, icon, title, desc }) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className="flex gap-3 items-start p-3 rounded-xl transition-colors duration-200
-            hover:bg-green-100 group"
-                >
-                  <img src={icon} alt={title} className="w-6 pt-1" />
-                  <div>
-                    <h3 className="font-bold text-green-800 group-hover:text-yellow-400 transition-colors duration-200">
-                      {title}
-                    </h3>
-                    <p className="opacity-60 text-sm">{desc}</p>
-                  </div>
-                </Link>
-              ))}
+            <div
+              className={`${navLinkStyle} group flex items-center gap-1 cursor-pointer`}
+            >
+              <span>Formations</span>
+              <img
+                src={down}
+                alt="dropdown"
+                className="w-4 mt-1 transition-transform group-hover:rotate-180"
+              />
+            </div>
+            <div
+              className={`
+        absolute top-10 left-0 bg-white rounded-xl shadow-lg p-4 w-[500px] z-50
+        transition-all duration-300 ease-out
+        ${
+          isServicesOpen
+            ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+        }
+      `}
+              style={{ boxShadow: "0 8px 32px rgba(166, 198, 118, 0.12)" }}
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {services.map(({ to, icon, title, desc }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    className="flex gap-3 items-start p-3 rounded-xl transition-colors duration-200 hover:bg-green-100 group"
+                  >
+                    <img src={icon} alt={title} className="w-6 pt-1" />
+                    <div>
+                      <h3 className="font-bold text-green-800 group-hover:text-yellow-400 transition-colors duration-200">
+                        {title}
+                      </h3>
+                      <p className="opacity-60 text-sm">{desc}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
+          <Link to="/about" className={navLinkStyle}>
+            À propos
+          </Link>
+          <Link to="/faq" className={navLinkStyle}>
+            FAQ
+          </Link>
+          <Link to="/contact" className={navLinkStyle}>
+            Contact
+          </Link>
+          <Link to="/blog" className={navLinkStyle}>
+            Blog
+          </Link>
         </div>
-        <Link to="/about" className={navLinkStyle}>
-          À propos
-        </Link>
-        <Link to="/contact" className={navLinkStyle}>
-          Contact
-        </Link>
-        <Link to="/blog" className={navLinkStyle}>
-          Blog
-        </Link>
-
-        {/* Social Media - Desktop */}
-        <div className="flex gap-4 ml-4">
+        {/* Social Icons at right end */}
+        <div className="flex items-center gap-4">
           {socialLinks.map(({ icon: Icon, url }, index) => (
             <a
               key={index}
@@ -262,6 +266,13 @@ const Navbar = () => {
             onClick={toggleMenu}
           >
             À propos
+          </Link>
+          <Link
+            to="/faq"
+            className="text-green-800 hover:text-green-600 mt-2 font-semibold py-2"
+            onClick={toggleMenu}
+          >
+            FAQ
           </Link>
           <Link
             to="/contact"

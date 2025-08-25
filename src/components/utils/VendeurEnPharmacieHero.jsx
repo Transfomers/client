@@ -1,6 +1,6 @@
 import React from 'react';
 import blogLingkaran from '../../assets/images/blogLingkaran.png';
-import image from '../../assets/images/DefaultImage2.jpeg';
+import image from '../../assets/myimages/sante2.jpg';
 import { FaArrowRight } from 'react-icons/fa';
 
 const VendeurEnPharmacieInfo = () => {

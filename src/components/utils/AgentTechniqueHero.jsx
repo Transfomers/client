@@ -1,7 +1,7 @@
 import React from 'react';
-import imgOne from '../../assets/images/agent1.jpg';
-import imgTwo from '../../assets/images/agent2.jpeg';
-import imgThree from '../../assets/images/agent3.jpg';
+import imgOne from '../../assets/myimages/sante48.jpg';
+import imgTwo from '../../assets/myimages/sante37.jpg';
+import imgThree from '../../assets/myimages/sante41.jpg';
 
 const AgentTechniqueHero = () => {
   const sections = [

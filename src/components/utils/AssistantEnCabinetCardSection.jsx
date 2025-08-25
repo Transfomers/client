@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
-import highSpeedImage from '../../assets/images/easysetupandhighspeed.jpeg';
-import globalCoverageImage from '../../assets/images/assistante1.jpeg';
-import reliablePerformanceImage from '../../assets/images/assistante2.jpeg';
+import highSpeedImage from '../../assets/myimages/sante42.jpg';
+import globalCoverageImage from '../../assets/myimages/sante24.jpg';
+import reliablePerformanceImage from '../../assets/myimages/sante26.jpg';
 
 const flipContents = [
   `Nous vous préparons à devenir un professionnel compétent et recherché dans le secteur médical.`,

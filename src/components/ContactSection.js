@@ -92,8 +92,8 @@ function ContactSection() {
 
   return (
     <>
-      <div className="flex justify-center gap-[100px] max-sm:gap-[50px] max-md:gap-[100px] mt-[100px] max-md:flex-col max-md:items-center">
-        <div className="flex flex-col ">
+      <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-12 w-full max-w-5xl mx-auto py-8 px-2">
+        <div className="flex flex-col justify-between w-full md:max-w-md bg-white rounded-2xl shadow-lg p-6 mb-6 md:mb-0">
           <h3 className="text-[22px] font-semibold text-green-800 pb-2">Appelez-nous</h3>
           <p className="text-green-800">Notre équipe vous répond du lundi au Samedi de 08h à 20h</p>
           <h3 className="text-[16px] text-green-800 font-semibold">
@@ -131,10 +131,10 @@ function ContactSection() {
         <div className="flex-1 w-full">
           <form
             onSubmit={handleSubmit}
-            className="bg-white rounded-lg w-full h-full p-8 shadow-xl"
+            className="bg-white rounded-2xl w-full h-full p-6 shadow-xl border border-green-800"
           >
             {/* First and Last Name Row */}
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="">
                 <label className="block text-sm font-semibold text-green-800 mb-1">
                   Prénom
@@ -176,7 +176,7 @@ function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border border-gray-300 rounded-xl"
+                className="w-full p-2 border border-green-800 rounded-xl"
                 placeholder="Veuillez entrer votre email"
               />
             </div>
@@ -217,7 +217,7 @@ function ContactSection() {
             <div className="text-center ">
               <button
                 type="submit"
-                className="bg-green-800 text-white py-2 px-4 w-full rounded-full hover:bg-yellow-400 hover:text-green-800 transition-colors"
+                className="bg-green-800 text-white py-2 px-4 w-full rounded-2xl hover:bg-yellow-400 hover:text-green-800 transition-colors"
               >
                 Envoyer le message
               </button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import GetInTouch from "../../assets/images/contact1.jpg";
+import GetInTouch from "../../assets/myimages/contact.jpg";
 import { FaClock } from "react-icons/fa";
 import "react-calendar/dist/Calendar.css";
  // Use your image

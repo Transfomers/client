@@ -5,10 +5,10 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 // Import available images
 import flyerImage from "../assets/pdf/Formations-santé.pdf";
-import heroImage1 from "../assets/images/whyImg1.jpg";
-import heroImage2 from "../assets/images/header2.jpg";
-import heroImage3 from "../assets/images/header3.jpg";
-import heroImage4 from "../assets/images/header6.png";
+import heroImage1 from "../assets/myimages/res1.jpg";
+import heroImage2 from "../assets/myimages/sante11.jpg";
+import heroImage3 from "../assets/myimages/sante5.jpg";
+import heroImage4 from "../assets/myimages/sante12.jpg";
 
 const Header = () => {
   const images = [heroImage1, heroImage2, heroImage3, heroImage4];
@@ -145,6 +145,8 @@ const Header = () => {
       <header className="relative h-screen w-full overflow-hidden">
         {/* Image Container with optimized loading and mobile fixes */}
         <div className="absolute inset-0 w-full h-full">
+          {/* Black overlay with opacity-30 */}
+          <div className="absolute inset-0 w-full h-full bg-black/30 pointer-events-none z-10"></div>
           {images.map((image, index) => (
             <div
               key={image}

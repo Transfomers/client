@@ -5,7 +5,7 @@ import {
   faChevronUp,
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import backgroundImage from "../../assets/images/auxilire1.jpg";
+import backgroundImage from "../../assets/myimages/sante10.jpg";
 import flyerImage from "../../assets/pdf/1.pdf";
 
 const trainingObjectives = [
