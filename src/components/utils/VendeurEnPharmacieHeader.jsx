@@ -5,11 +5,12 @@ import {
   faChevronUp,
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import backgroundImage from "../../assets/images/assistanceph.png";
+
 import flyerImage from "../../assets/pdf/4.pdf";
 
 const trainingObjectives = [
-  {
+ 
+    {
     title: "Informations sur la formation Auxiliaire / Vendeur en Pharmacie",
     points: [
       "Diplôme délivré : Diplôme de qualification professionnelle (DQP)",
@@ -73,7 +74,7 @@ const VendeurEnPharmacieHeader = () => {
   const toggleCard = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
+ const backgroundImage = "/myimages/assistanceph.png";
   return (
     <header
       className="relative w-full h-fit md:h-[90vh] bg-cover bg-center text-white"

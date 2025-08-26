@@ -1,15 +1,15 @@
 import React from "react";
 import { Calendar, Eye } from "lucide-react";
 
-import telemedecineImage from "../assets/images/telemedecine.jpg";
-import dmeImage from "../assets/images/dme.jpg";
-import appsSanteImage from "../assets/images/appssante.jpg";
-import hygieneImage from "../assets/images/hygiene.jpeg";
-import vaccinationImage from "../assets/images/vaccination.jpg";
-import preventionImage from "../assets/images/prevention.jpeg";
-import nutritionImage from "../assets/images/nutrition.jpeg";
-import mentalImage from "../assets/images/whyImg2.jpg";
-import urgencesImage from "../assets/images/urgence.jpeg";
+const telemedecineImage = '/imageprovider/telemedecine.jpg';
+const dmeImage = '/imageprovider/dme.jpg';
+const appsSanteImage = '/imageprovider/appssante.jpg';
+const hygieneImage = '/imageprovider/hygiene.jpeg';
+const vaccinationImage = '/imageprovider/vaccination.jpg';
+const preventionImage = '/imageprovider/prevention.jpeg';
+const nutritionImage = '/imageprovider/nutrition.jpeg';
+const mentalImage = '/imageprovider/whyImg2.jpg';
+const urgencesImage = '/imageprovider/urgence.jpeg';
 
 const getFrenchDate = (daysOffset) => {
   const date = new Date();

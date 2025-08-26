@@ -5,10 +5,10 @@ import {
   faChevronUp,
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import backgroundImage from "../../assets/myimages/sante15.jpg";
 import flyerImage from "../../assets/pdf/3.pdf";
 
 const trainingObjectives = [
+
   {
     title: "Informations sur la formation",
     points: [
@@ -77,8 +77,12 @@ const AgentTechniqueInfo = () => {
   const toggleCard = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const backgroundImage = "/myimages/sante15.jpg";
+
 
   return (
+
+
     <header
       className="relative w-full h-fit md:h-[90vh] bg-cover bg-center text-white"
       style={{ backgroundImage: `url(${backgroundImage})` }}

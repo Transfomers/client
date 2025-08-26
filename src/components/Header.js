@@ -1,23 +1,24 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-// Import available images
+// PDF import (still handled by Webpack)
 import flyerImage from "../assets/pdf/Formations-santé.pdf";
-import heroImage1 from "../assets/myimages/res1.jpg";
-import heroImage2 from "../assets/myimages/sante11.jpg";
-import heroImage3 from "../assets/myimages/sante5.jpg";
-import heroImage4 from "../assets/myimages/sante12.jpg";
 
 const Header = () => {
-  const images = [heroImage1, heroImage2, heroImage3, heroImage4];
+  const images = [
+    "/myimages/res1.jpg",
+    "/myimages/sante11.jpg",
+    "/myimages/sante5.jpg",
+    "/myimages/sante12.jpg"
+  ];
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState(new Set([images[0]]));
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Add image dimensions for better CLS handling
   const imageDimensions = {
     width: 1920,
     height: 1080,
@@ -28,125 +29,50 @@ const Header = () => {
   const shortDescription =
     "ITC Santé forme des professionnels de la santé engagés, plaçant l'humain au cœur de leur pratique et intégrant les innovations médicales de demain. Découvrez nos formations de qualité à Yaoundé.";
 
-  // Preload critical resources
+  // Preload images
   useEffect(() => {
-    // Preload next image
-    const nextIndex = (currentImageIndex + 1) % images.length;
-    const preloadNext = new Image();
-    preloadNext.src = images[nextIndex];
-
-    // Preconnect to external resources
-    const links = [
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' }
-    ];
-
-    links.forEach(({ rel, href, crossOrigin }) => {
-      const link = document.createElement('link');
-      link.rel = rel;
-      link.href = href;
-      if (crossOrigin) link.crossOrigin = crossOrigin;
-      document.head.appendChild(link);
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => setLoadedImages((prev) => new Set([...prev, src]));
     });
+  }, [images]);
 
-    return () => {
-      links.forEach(() => {
-        const link = document.head.lastChild;
-        if (link) document.head.removeChild(link);
-      });
-    };
-  }, [currentImageIndex, images]);
-
-  // Optimized image preloading
+  // Rotate images
   useEffect(() => {
-    const preloadImages = async () => {
-      const imagePromises = images.map((src) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = () => {
-            setLoadedImages((prev) => new Set([...prev, src]));
-            resolve(src);
-          };
-          img.onerror = reject;
-        });
-      });
-
-      try {
-        // Load images in sequence for better performance
-        for (const promise of imagePromises) {
-          await promise;
-        }
-      } catch (error) {
-        console.error("Error preloading images:", error);
-      }
-    };
-
-    preloadImages();
-  }, []);
-
-  // Optimized image rotation
-  useEffect(() => {
-    let timeoutId;
     const interval = setInterval(() => {
       setIsTransitioning(true);
-      timeoutId = setTimeout(() => {
+      setTimeout(() => {
         setCurrentImageIndex((prev) => (prev + 1) % images.length);
         setIsTransitioning(false);
       }, 300);
     }, 5000);
 
-    return () => {
-      clearInterval(interval);
-      if (timeoutId) clearTimeout(timeoutId);
-    };
+    return () => clearInterval(interval);
   }, [images.length]);
 
-  // Optimized entrance animation
+  // Entrance animation
   useEffect(() => {
     const timeoutId = setTimeout(() => setIsVisible(true), 300);
     return () => clearTimeout(timeoutId);
   }, []);
 
   const handleDownloadFlyer = () => {
-    try {
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      const downloadUrl = flyerImage;
-      const fileName = "ITC-Sante-Formations.pdf";
-
-      if (isMobile) {
-        window.open(downloadUrl, "_blank");
-
-        const link = document.createElement("a");
-        link.href = downloadUrl;
-        link.download = fileName;
-        link.target = "_blank";
-        document.body.appendChild(link);
-        link.click();
-        setTimeout(() => {
-          document.body.removeChild(link);
-        }, 100);
-      } else {
-        const link = document.createElement("a");
-        link.href = downloadUrl;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    } catch (error) {
-      console.error("Download error:", error);
-      window.open(flyerImage, "_blank");
-    }
+    const fileName = "ITC-Sante-Formations.pdf";
+    const link = document.createElement("a");
+    link.href = flyerImage;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
     <div className="relative w-full">
       <header className="relative h-screen w-full overflow-hidden">
-        {/* Image Container with optimized loading and mobile fixes */}
         <div className="absolute inset-0 w-full h-full">
-          {/* Black overlay with opacity-30 */}
           <div className="absolute inset-0 w-full h-full bg-black/30 pointer-events-none z-10"></div>
+
           {images.map((image, index) => (
             <div
               key={image}
@@ -172,13 +98,10 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Content Overlay with mobile optimization */}
         <div className="relative z-10 h-full w-full flex flex-col justify-center items-end px-4 sm:px-6 md:px-8">
           <div className="w-full max-w-[90%] sm:max-w-[400px] md:max-w-lg lg:max-w-xl ml-auto">
             <Suspense fallback={<div className="animate-pulse bg-white/10 rounded-2xl h-96"></div>}>
-              {/* Card Container with improved mobile layout */}
               <div className="bg-white/10 p-1 rounded-2xl border border-white/20 shadow-xl backdrop-blur-sm transform transition-all duration-500">
-                {/* Card Content */}
                 <div
                   className={`bg-black/75 p-4 md:p-5 rounded-xl transform transition-all duration-500 ease-out
                     ${isVisible ? "translate-x-0 opacity-100 scale-100" : "translate-x-full opacity-0 scale-95"}`}

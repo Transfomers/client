@@ -1,8 +1,8 @@
 import React from 'react';
-import image from '../../assets/myimages/about2.jpg';
-import image1 from '../../assets/myimages/about3.jpg';
 
 const OurIdentity = () => {
+  const image = '/imageprovider/about2.jpg';
+  const image1 = '/imageprovider/about3.jpg';
   return (
     <section className="bg-white text-gray-800 py-16 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
