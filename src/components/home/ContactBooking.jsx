@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import GetInTouch from "../../assets/myimages/contact.jpg";
 import { FaClock } from "react-icons/fa";
 import "react-calendar/dist/Calendar.css";
- // Use your image
+// Use your image
 
 function ContactBooking() {
   const [date, setDate] = useState(new Date());
@@ -55,14 +54,14 @@ function ContactBooking() {
         {/* Info Card Section */}
         <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center border border-green-200">
           <img
-            src={GetInTouch}
+            src={process.env.PUBLIC_URL + '/asset/myimages/contact.jpg'}
             alt="Nos Formations"
             className="rounded-lg w-full max-h-60 object-cover mb-4"
           />
           <h3 className="text-green-800 text-xl font-bold mb-2">Nos Formations</h3>
           <p className="text-gray-700 text-center">
-            Vous avez une question sur nos formations, modalités d'inscription ou rendez-vous ? 
-            Notre équipe est à votre écoute pour vous répondre rapidement et efficacement. 
+            Vous avez une question sur nos formations, modalités d'inscription ou rendez-vous ?
+            Notre équipe est à votre écoute pour vous répondre rapidement et efficacement.
             N'hésitez pas à nous contacter !
           </p>
         </div>

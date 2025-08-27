@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 // PDF import (still handled by Webpack)
-import flyerImage from "../assets/pdf/Formations-santé.pdf";
+
 
 const Header = () => {
   const images = [
-    "/myimages/res1.jpg",
-    "/myimages/sante11.jpg",
-    "/myimages/sante5.jpg",
-    "/myimages/sante12.jpg"
+    "/asset/myimages/res1.jpg",
+    "/asset/myimages/sante11.jpg",
+    "/asset/myimages/sante5.jpg",
+    "/asset/myimages/sante12.jpg"
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -33,7 +33,7 @@ const Header = () => {
   useEffect(() => {
     images.forEach((src) => {
       const img = new Image();
-      img.src = src;
+      img.src = process.env.PUBLIC_URL + src;
       img.onload = () => setLoadedImages((prev) => new Set([...prev, src]));
     });
   }, [images]);
@@ -60,7 +60,7 @@ const Header = () => {
   const handleDownloadFlyer = () => {
     const fileName = "ITC-Sante-Formations.pdf";
     const link = document.createElement("a");
-    link.href = flyerImage;
+    link.href = process.env.PUBLIC_URL + '/asset/pdf/Formations-santé.pdf';
     link.download = fileName;
     document.body.appendChild(link);
     link.click();
@@ -73,12 +73,12 @@ const Header = () => {
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute inset-0 w-full h-full bg-black/30 pointer-events-none z-10"></div>
 
+
           {images.map((image, index) => (
             <div
               key={image}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out ${
-                currentImageIndex === index ? "opacity-100" : "opacity-0"
-              } ${isTransitioning ? "transition-transform duration-300 scale-105" : "scale-100"}`}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out ${currentImageIndex === index ? "opacity-100" : "opacity-0"
+                } ${isTransitioning ? "transition-transform duration-300 scale-105" : "scale-100"}`}
             >
               <img
                 src={image}

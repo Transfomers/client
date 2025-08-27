@@ -1,5 +1,4 @@
 import React from "react";
-import aiCoverImage3 from "../assets/myimages/team1.jpg";
 import OurIdentity from "../components/utils/Ouridentity";
 import { Helmet } from "react-helmet";
 const About = () => {
@@ -126,7 +125,7 @@ const About = () => {
             </div>
             <div className="lg:w-1/2 flex justify-center">
               <img
-                src={aiCoverImage3}
+                src={process.env.PUBLIC_URL + '/asset/myimages/team1.jpg'}
                 alt="étudiants en formation paramédicale à Yaoundé – ITC Santé, école professionnelle santé Cameroun"
                 className="rounded-3xl w-full max-w-md"
               />

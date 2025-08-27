@@ -1,8 +1,10 @@
 
 const AgentTechniqueHero = () => {
-  const image = '/imageprovider/sante48.jpg';
-  const image1 = '/imageprovider/sante37.jpg';
-  const image2 = '/imageprovider/sante41.jpg';
+
+  const image = process.env.PUBLIC_URL + '/asset/myimages/sante48.jpg';
+  const image1 = process.env.PUBLIC_URL + '/asset/myimages/sante37.jpg';
+  const image2 = process.env.PUBLIC_URL + '/asset/myimages/sante41.jpg';
+
   const sections = [
     {
       id: 1,
@@ -14,7 +16,7 @@ const AgentTechniqueHero = () => {
 - Préparation des réactifs et respect strict des protocoles
 - Manipulation d’équipements de laboratoire (microscope, centrifugeuse)
 - Rédaction de rapports et transmission des résultats`,
-  image: image,
+      image: image,
       reverse: false
     },
     {
@@ -28,7 +30,7 @@ const AgentTechniqueHero = () => {
 - Technologies de pointe (automobile, aéronautique, plasturgie)
 
 Le technicien peut évoluer vers des postes de responsabilité ou poursuivre des études spécialisées.`,
-  image: image1,
+      image: image1,
       reverse: true
     },
     {
@@ -43,7 +45,7 @@ Le technicien peut évoluer vers des postes de responsabilité ou poursuivre des
 - Sensibilisation à l’éthique, à la collaboration et à l’autonomie
 
 Ces modules renforcent l’adaptabilité du technicien dans tout environnement scientifique.`,
-  image: image2,
+      image: image2,
       reverse: false
     }
   ];

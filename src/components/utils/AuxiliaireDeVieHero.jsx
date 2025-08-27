@@ -1,7 +1,5 @@
 import React from 'react';
-import imgOne from '../../assets/myimages/auxiliere1.jpg';
-import imgTwo from '../../assets/myimages/sante6.jpg';
-import imgThree from '../../assets/myimages/auxiliere2.jpg';
+
 
 const AuxiliaireDeVieHero = () => {
   const sections = [
@@ -14,7 +12,7 @@ const AuxiliaireDeVieHero = () => {
 - Application des gestes de soins et de confort  
 - Respect de l'hygiène, de la sécurité et des normes professionnelles  
 - Communication professionnelle et bienveillance`,
-      image: imgOne,
+      image: process.env.PUBLIC_URL + '/asset/myimages/auxiliere1.jpg',
       layout: "image-right"
     },
     {
@@ -26,7 +24,7 @@ const AuxiliaireDeVieHero = () => {
 - Soins d'hygiène, alimentation et confort  
 - Animation, éducation sanitaire et communication  
 - Accompagnement de la fin de vie et bientraitance`,
-      image: imgTwo,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante6.jpg',
       layout: "both-left"
     },
     {
@@ -38,7 +36,7 @@ const AuxiliaireDeVieHero = () => {
 - Insertion professionnelle dans les structures de santé  
 - Accompagnement à la création d'activités médico-sociales  
 - Développement des compétences transversales (autonomie, écoute, rigueur)`,
-      image: imgThree,
+      image: process.env.PUBLIC_URL + '/asset/myimages/auxiliere1.jpg',
       layout: "image-right"
     }
   ];
@@ -48,13 +46,12 @@ const AuxiliaireDeVieHero = () => {
       {sections.map((section, index) => (
         <div key={section.id} className="container mx-auto px-6 mb-20">
           <div
-            className={`flex flex-col lg:items-center gap-12 ${
-              section.layout === "image-right"
-                ? "lg:flex-row"
-                : section.layout === "both-left"
+            className={`flex flex-col lg:items-center gap-12 ${section.layout === "image-right"
+              ? "lg:flex-row"
+              : section.layout === "both-left"
                 ? "lg:flex-row"
                 : ""
-            }`}
+              }`}
           >
             {/* For "both-left": image first, text second */}
             {section.layout === "both-left" && (

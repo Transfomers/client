@@ -1,18 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DefaultImage1 from "../../assets/myimages/sante35.jpg";
-import DefaultImage3 from "../../assets/myimages/tech1.jpg";
-import DefaultImage4 from "../../assets/myimages/sante1.jpg";
-import DefaultImage5 from "../../assets/myimages/sante45.jpg";
-import DefaultImage6 from "../../assets/myimages/sante4.jpg";
-import DefaultImage2 from "../../assets/myimages/agent5.jpeg";
 
 const ServiceCard = ({ image, number, title, paragraph, link }) => (
   <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
     <div className="relative h-56 overflow-hidden">
-      <img 
-        src={image} 
-        alt={title} 
+      <img
+        src={image}
+        alt={title}
         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
         decoding="async"
@@ -38,42 +32,42 @@ const ServiceCard = ({ image, number, title, paragraph, link }) => (
 const ServicesCard = () => {
   const services = [
     {
-      image: DefaultImage6,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante4.jpg',
       number: "1",
       title: "Auxiliaire de vie",
       paragraph: "Apprenez à accompagner les personnes âgées, malades ou en situation de handicap. Compétences : soins d’hygiène, accompagnement moral, gestion de la vie quotidienne.",
       link: "/AuxiliareDeVie"
     },
     {
-      image: DefaultImage3,
+      image: process.env.PUBLIC_URL + '/asset/myimages/tech1.jpg',
       number: "2",
       title: "Technicien de Laboratoire",
       paragraph: "Devenez un acteur clé du diagnostic médical. Compétences : analyses biologiques, prélèvements, entretien du matériel.",
       link: "/AgentTechniqueLaboratoire"
     },
     {
-      image: DefaultImage4,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante1.jpg',
       number: "3",
       title: "Assistant en Cabinet Médical",
       paragraph: "Préparez-vous à assister les médecins au quotidien. Compétences : accueil des patients, gestion des dossiers, suivi des consultations.",
       link: "/AssistantEnCabinetMedical"
     },
     {
-      image: DefaultImage2,
+      image: process.env.PUBLIC_URL + '/asset/myimages/agent5.jpeg',
       number: "4",
       title: "Vendeur / Auxiliaire en Pharmacie",
       paragraph: "Formez-vous à la vente de produits pharmaceutiques en officine. Compétences : conseils clients, gestion de stock, bases de pharmacologie.",
       link: "/VendeurEnPharmacie"
     },
     {
-      image: DefaultImage5,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante45.jpg',
       number: "5",
       title: "Délégué Médical",
       paragraph: "Devenez un ambassadeur des laboratoires pharmaceutiques. Compétences : communication médicale, promotion de médicaments, visites aux professionnels de santé.",
       link: "/DelegueMedical"
     },
     {
-      image: DefaultImage1,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante35.jpg',
       number: "6",
       title: "Aide Chimiste / Biologiste",
       paragraph: "Initiez-vous aux techniques de base en chimie et biologie. Compétences : préparation d’échantillons, techniques de laboratoire, analyses simples.",

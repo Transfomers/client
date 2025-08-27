@@ -17,4 +17,3 @@ export function CardContent({ children, className }) {
     </div>
   );
 }
-a

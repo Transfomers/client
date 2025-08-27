@@ -1,15 +1,12 @@
 import React from "react";
-import coverImage from "../../assets/myimages/sante25.jpg";
-import flyerImages from "../../assets/myimages/sante16.jpg";
-import blogLingkaran from "../../assets/images/blogLingkaran.png";
-import flyerImage from "../../assets/pdf/2.pdf";
+import flyerImage from "../../asset/pdf/2.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const AssistantEnCabinetMedicalHero = () => {
   const handleDownloadFlyer = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  
+
     if (isMobile) {
       window.open(flyerImage, '_blank');
     } else {
@@ -29,7 +26,7 @@ const AssistantEnCabinetMedicalHero = () => {
         <div className="relative z-10 space-y-6">
           {/* Background Image Behind Text */}
           <img
-            src={blogLingkaran}
+            src={process.env.PUBLIC_URL + '/asset/images/blogLingkaran.png'}
             alt="Background decoration"
             className="absolute -top-10 -left-10 w-96 opacity-10 z-0"
             loading="eager"
@@ -70,7 +67,7 @@ const AssistantEnCabinetMedicalHero = () => {
         {/* Right Image with Flyer Overlay */}
         <div className="relative">
           <img
-            src={coverImage}
+            src={process.env.PUBLIC_URL + '/asset/myimages/sante25.jpg'}
             alt="Assistant en Cabinet Médical"
             className="rounded-xl shadow-xl object-cover w-full h-full"
             loading="eager"
@@ -83,7 +80,7 @@ const AssistantEnCabinetMedicalHero = () => {
             }}
           />
           <img
-            src={flyerImages}
+            src={process.env.PUBLIC_URL + '/asset/myimages/sante16.jpg'}
             alt="Flyer"
             className="absolute bottom-4 right-4 w-32 h-32 border-4 border-white rounded-lg shadow-lg"
             loading="lazy"

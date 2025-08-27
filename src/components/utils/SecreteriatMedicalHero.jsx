@@ -5,7 +5,6 @@ import {
   faChevronUp,
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import backgroundImage from "../../assets/images/assistante3.jpg";
 import flyerImage from "../../assets/pdf/6.pdf";
 
 const trainingObjectives = [
@@ -81,7 +80,7 @@ const SecreteriatMedicalHero = () => {
   return (
     <header
       className="relative w-full h-fit md:h-[90vh] bg-cover bg-center text-white"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/asset/images/assistante3.jpg'})` }}
     >
       <div className="absolute inset-0 bg-[#003c2e]/80" />
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-start max-w-7xl mx-auto px-6 py-12 gap-8">

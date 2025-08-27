@@ -1,14 +1,10 @@
 import React from "react";
-// import { BsGraphUp } from "react-icons/bs";
 import {
   FaUserCheck,
   FaChalkboardTeacher,
   FaBriefcase,
   FaUsers,
 } from "react-icons/fa";
-import whyImg1 from "../../assets/myimages/competence1.jpg";
-import whyImg2 from "../../assets/myimages/sante6.jpg";
-import whyImg3 from "../../assets/myimages/sante45.jpg";
 import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {
@@ -71,7 +67,7 @@ const WhyChooseUs = () => {
             <div className="relative w-64 h-64 mx-auto mt-8 rounded-full overflow-hidden">
               <div className="absolute inset-0">
                 <img
-                  src={whyImg2}
+                  src={process.env.PUBLIC_URL + '/asset/myimages/sante6.jpg'}
                   alt="Formation pratique"
                   className="w-full h-full object-cover clip-top-half"
                   loading="lazy"
@@ -82,7 +78,7 @@ const WhyChooseUs = () => {
               </div>
               <div className="absolute inset-0">
                 <img
-                  src={whyImg3}
+                  src={process.env.PUBLIC_URL + '/asset/myimages/sante45.jpg'}
                   alt="Équipe pédagogique"
                   className="w-full h-full object-cover clip-bottom-half"
                   loading="lazy"
@@ -97,7 +93,7 @@ const WhyChooseUs = () => {
           {/* Right Column - Main Image */}
           <div className="relative">
             <img
-              src={whyImg1}
+              src={process.env.PUBLIC_URL + '/asset/myimages/competence1.jpg'}
               alt="Étudiants en formation"
               className="rounded-lg shadow-lg w-full h-[600px] object-cover"
               loading="eager"

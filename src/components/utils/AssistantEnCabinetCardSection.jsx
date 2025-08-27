@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
-import highSpeedImage from '../../assets/myimages/sante42.jpg';
-import globalCoverageImage from '../../assets/myimages/sante24.jpg';
-import reliablePerformanceImage from '../../assets/myimages/sante26.jpg';
 
 const flipContents = [
   `Nous vous préparons à devenir un professionnel compétent et recherché dans le secteur médical.`,
@@ -12,6 +9,7 @@ const flipContents = [
 ];
 
 const AssistantEnCabinetCardSection = () => {
+
   const [face, setFace] = useState(0);
   const autoRef = useRef(null);
   const cardRef = useRef(null);
@@ -66,13 +64,13 @@ const AssistantEnCabinetCardSection = () => {
       {/* Left: Image Stack */}
       <div className="relative w-80 h-80 mx-auto">
         <div className="absolute inset-0 border-4 border-[#3aaa35] rounded-full overflow-hidden">
-          <img src={highSpeedImage} alt="High Speed" className="object-cover w-full h-full" />
+          <img src={process.env.PUBLIC_URL + '/asset/myimages/sante42.jpg'} alt="High Speed" className="object-cover w-full h-full" />
         </div>
         <div className="absolute -left-6 bottom-0 w-32 h-40 border-4 border-[#3aaa35] rounded-full overflow-hidden">
-          <img src={globalCoverageImage} alt="Global Coverage" className="object-cover w-full h-full" />
+          <img src={process.env.PUBLIC_URL + '/asset/myimages/sante24.jpg'} alt="Global Coverage" className="object-cover w-full h-full" />
         </div>
         <div className="absolute right-0 -top-6 w-32 h-40 border-4 border-[#3aaa35] rounded-full overflow-hidden">
-          <img src={reliablePerformanceImage} alt="Reliable Performance" className="object-cover w-full h-full" />
+          <img src={process.env.PUBLIC_URL + '/asset/myimages/sante26.jpg'} alt="Reliable Performance" className="object-cover w-full h-full" />
         </div>
       </div>
 

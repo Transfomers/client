@@ -1,7 +1,4 @@
 import React from 'react';
-import imgOne from '../../assets/myimages/sante39.jpg';
-import imgTwo from '../../assets/myimages/sante48.jpg';
-import imgThree from '../../assets/myimages/sante10.jpg';
 
 const AssistantEnCabinetRole = () => {
   const sections = [
@@ -15,7 +12,7 @@ const AssistantEnCabinetRole = () => {
 
       ● Savoir écouter, orienter et rassurer les patients :
       Capacité à instaurer une relation de confiance avec les patients, en les écoutant attentivement, les orientant vers les services appropriés et les rassurant.`,
-      image: imgOne,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante39.jpg',
       reverse: false
     },
     {
@@ -26,7 +23,7 @@ const AssistantEnCabinetRole = () => {
 
       ● Pratique et usage des termes médicaux :
       Maîtrise de la terminologie médicale et de la nomenclature des actes médicaux pour assurer une communication claire et précise avec l'équipe médicale.`,
-      image: imgTwo,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante48.jpg',
       reverse: true
     },
     {
@@ -39,7 +36,7 @@ const AssistantEnCabinetRole = () => {
 
       ● Insertion, évolution, carrière, entrepreneuriat :
       Préparation à une carrière dans un cabinet médical, mais aussi à des opportunités d’évolution professionnelle.`,
-      image: imgThree,
+      image: process.env.PUBLIC_URL + '/asset/myimages/sante10.jpg',
       reverse: false
     }
   ];

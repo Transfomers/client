@@ -1,8 +1,8 @@
 import React from 'react';
 
 const OurIdentity = () => {
-  const image = '/imageprovider/about2.jpg';
-  const image1 = '/imageprovider/about3.jpg';
+  const image = process.env.PUBLIC_URL + '/asset/myimages/about2.jpg';
+  const image1 = process.env.PUBLIC_URL + '/asset/myimages/about3.jpg';
   return (
     <section className="bg-white text-gray-800 py-16 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -41,9 +41,9 @@ const OurIdentity = () => {
 
         {/* Right Image */}
         <div className="flex justify-center">
-          <img 
-            src={image} 
-            alt="Notre mission ITC Santé" 
+          <img
+            src={image}
+            alt="Notre mission ITC Santé"
             className="rounded-3xl w-full max-w-md"
             loading="eager"
             decoding="async"
@@ -61,9 +61,9 @@ const OurIdentity = () => {
       <div className="mt-20 grid md:grid-cols-2 gap-10 items-center">
         {/* Left Image */}
         <div className="flex justify-center order-2 md:order-1">
-          <img 
-            src={image1} 
-            alt="Équipe ITC Santé" 
+          <img
+            src={image1}
+            alt="Équipe ITC Santé"
             className="rounded-3xl w-full max-w-md"
             loading="lazy"
             decoding="async"

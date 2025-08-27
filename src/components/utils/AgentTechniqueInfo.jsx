@@ -39,18 +39,18 @@ const trainingObjectives = [
     ],
   },
   {
-  title: "Débouchés professionnels",
-  points: [
-    "Les laboratoires d’analyses médicales et de biologie ;",
-    "Les hôpitaux publics et cliniques privées (secteurs d’analyses, hématologie, biochimie, etc.) ;",
-    "Les centres de recherche biomédicale ou pharmaceutique ;",
-    "Les industries pharmaceutiques et agroalimentaires (contrôle qualité, assurance qualité) ;",
-    "Les laboratoires universitaires ou d’enseignement supérieur ;",
-    "Les services vétérinaires et laboratoires vétérinaires ;",
-    "Les laboratoires d’environnement ou d’hygiène ;",
-    "Grâce à sa formation polyvalente, l’agent technique de laboratoire est un acteur essentiel dans le processus de diagnostic médical et d’analyse scientifique.",
-  ],
-}
+    title: "Débouchés professionnels",
+    points: [
+      "Les laboratoires d’analyses médicales et de biologie ;",
+      "Les hôpitaux publics et cliniques privées (secteurs d’analyses, hématologie, biochimie, etc.) ;",
+      "Les centres de recherche biomédicale ou pharmaceutique ;",
+      "Les industries pharmaceutiques et agroalimentaires (contrôle qualité, assurance qualité) ;",
+      "Les laboratoires universitaires ou d’enseignement supérieur ;",
+      "Les services vétérinaires et laboratoires vétérinaires ;",
+      "Les laboratoires d’environnement ou d’hygiène ;",
+      "Grâce à sa formation polyvalente, l’agent technique de laboratoire est un acteur essentiel dans le processus de diagnostic médical et d’analyse scientifique.",
+    ],
+  }
 
 ];
 
@@ -77,7 +77,7 @@ const AgentTechniqueInfo = () => {
   const toggleCard = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  const backgroundImage = "/myimages/sante15.jpg";
+  const backgroundImage = process.env.PUBLIC_URL + "/asset/myimages/sante15.jpg";
 
 
   return (

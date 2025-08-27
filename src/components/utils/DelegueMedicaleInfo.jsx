@@ -1,18 +1,16 @@
 import React from 'react';
-import blogLingkaran from '../../assets/images/blogLingkaran.png';
-import image from '../../assets/myimages/sante16.jpg';
 
 
 const DelegueMedicalInfo = () => {
   return (
     <header className="w-full bg-white py-10 px-4 md:px-16 lg:px-24">
       <div className="relative flex flex-col md:flex-row items-start justify-between gap-6">
-        
+
         {/* Left image with text overlay */}
         <div className="relative flex-1 h-[420px]">
-          <img 
-            src={blogLingkaran} 
-            alt="Secrétariat Médical" 
+          <img
+            src={process.env.PUBLIC_URL + '/asset/images/blogLingkaran.png'}
+            alt="Secrétariat Médical"
             className="w-full h-full object-cover rounded-2xl"
             loading="eager"
             decoding="async"
@@ -23,7 +21,7 @@ const DelegueMedicalInfo = () => {
               e.target.style.opacity = '0.9';
             }}
           />
-          
+
           {/* Overlaid welcome text */}
           <div className="absolute inset-0 flex flex-col justify-start items-start p-6 sm:p-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-700 drop-shadow-md">
@@ -35,7 +33,7 @@ const DelegueMedicalInfo = () => {
             <p className="mt-4 text-white text-base sm:text-lg max-w-md">
               Rejoignez une formation professionnelle complète et ouvrez les portes du secteur médical.
             </p>
-            
+
           </div>
 
           {/* Floating card on left */}
@@ -45,7 +43,7 @@ const DelegueMedicalInfo = () => {
             </div>
           </div>
         </div>
-          
+
         {/* Middle horizontal card */}
         <div className="hidden md:block absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="bg-yellow-50 border border-green-800 text-green-900 px-4 py-3 rounded-xl shadow-md text-center text-base font-medium">
@@ -55,9 +53,9 @@ const DelegueMedicalInfo = () => {
 
         {/* Right image with floating cards */}
         <div className="relative flex-1 h-[420px] mt-10 md:mt-0 md:-translate-y-6">
-          <img 
-            src={image} 
-            alt="Lire plus" 
+          <img
+            src={process.env.PUBLIC_URL + '/asset/myimages/sante16.jpg'}
+            alt="Lire plus"
             className="w-full h-full object-cover rounded-2xl shadow-lg"
             loading="lazy"
             decoding="async"
@@ -68,7 +66,7 @@ const DelegueMedicalInfo = () => {
               e.target.style.opacity = '0.9';
             }}
           />
-          
+
           <div className="absolute bottom-20 left-4 bg-yellow-50 border border-green-800 text-green-900 px-5 py-2 rounded-xl shadow-md text-sm font-medium max-w-xs">
             Notre équipe vous répond rapidement par mail ou téléphone
           </div>
