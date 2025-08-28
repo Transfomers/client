@@ -1,20 +1,11 @@
 {
-  "images": {
-    "sizes": [320, 640, 960, 1200, 1920],
-    "formats": ["jpg", "jpeg", "png", "webp", "svg", "gif"],
-    "domains": ["itc-sante.com"]
-  },
   "headers": [
     {
       "source": "/asset/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public,max-age=31536000,immutable" },
+        { "key": "Content-Type", "value": "image/png" }
       ]
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
