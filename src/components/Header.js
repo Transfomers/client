@@ -7,6 +7,19 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 
 const Header = () => {
+
+  // Utility function to get optimized image path
+  const getOptimizedImage = (src, isActive) => {
+    // If not active, serve a lower-res version (e.g. with '-small' suffix)
+    if (!isActive) {
+      const extIndex = src.lastIndexOf('.');
+      if (extIndex !== -1) {
+        return src.slice(0, extIndex) + '-small' + src.slice(extIndex);
+      }
+    }
+    return src;
+  };
+
   const images = [
     "/asset/myimages/res1.jpg",
     "/asset/myimages/sante11.jpg",
@@ -74,28 +87,31 @@ const Header = () => {
           <div className="absolute inset-0 w-full h-full bg-black/30 pointer-events-none z-10"></div>
 
 
-          {images.map((image, index) => (
-            <div
-              key={image}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out ${currentImageIndex === index ? "opacity-100" : "opacity-0"
-                } ${isTransitioning ? "transition-transform duration-300 scale-105" : "scale-100"}`}
-            >
-              <img
-                src={image}
-                alt={`Hero ${index + 1}`}
-                className="w-full h-full object-cover object-center"
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
-                fetchpriority={index === 0 ? "high" : "low"}
-                width={imageDimensions.width}
-                height={imageDimensions.height}
-                style={{
-                  opacity: loadedImages.has(image) ? 1 : 0,
-                  transition: "opacity 0.3s ease-in-out",
-                }}
-              />
-            </div>
-          ))}
+          {images.map((image, index) => {
+            const isActive = currentImageIndex === index;
+            const optimizedSrc = getOptimizedImage(image, isActive);
+            return (
+              <div
+                key={image}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out ${isActive ? "opacity-100" : "opacity-0"} ${isTransitioning ? "transition-transform duration-300 scale-105" : "scale-100"}`}
+              >
+                <img
+                  src={optimizedSrc}
+                  alt={`Hero ${index + 1}`}
+                  className="w-full h-full object-cover object-center"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchpriority={index === 0 ? "high" : "low"}
+                  width={imageDimensions.width}
+                  height={imageDimensions.height}
+                  style={{
+                    opacity: loadedImages.has(image) ? 1 : 0,
+                    transition: "opacity 0.3s ease-in-out",
+                  }}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <div className="relative z-10 h-full w-full flex flex-col justify-center items-end px-4 sm:px-6 md:px-8">

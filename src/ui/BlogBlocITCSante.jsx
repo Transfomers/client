@@ -1,6 +1,19 @@
 import React from "react";
 import { Calendar, Eye } from "lucide-react";
 
+
+// Utility to get optimized image path
+const getOptimizedImage = (src) => {
+  // Use '-small' version if available for non-retina screens
+  if (window.devicePixelRatio <= 1) {
+    const extIndex = src.lastIndexOf('.');
+    if (extIndex !== -1) {
+      return src.slice(0, extIndex) + '-small' + src.slice(extIndex);
+    }
+  }
+  return src;
+};
+
 const telemedecineImage = '/imageprovider/telemedecine.jpg';
 const dmeImage = '/imageprovider/dme.jpg';
 const appsSanteImage = '/imageprovider/appssante.jpg';
@@ -139,9 +152,11 @@ export default function BlogBlocITCSante() {
             className="overflow-hidden border-2 border-yellow-400 rounded-xl shadow-lg hover:shadow-xl transition-all"
           >
             <img
-              src={article.image}
+              src={getOptimizedImage(article.image)}
               alt={article.title}
               className="w-full h-48 object-cover border-b-2 border-yellow-400"
+              loading="lazy"
+              decoding="async"
             />
             <div className="p-4 bg-white">
               <h3 className="text-sm text-yellow-400 font-bold">{`0${article.id}.`}</h3>
